@@ -11,7 +11,11 @@ function NavBar() {
       <div className="navbar-left-side">
         {/* <p>navbar left side</p> */}
         <div className="left-inner">
-          {/* <p>leftbar inner</p> */}
+          {/* <p>leftbar inner</p> */}.
+          <div className="logo">
+            <span className="logo-online">Online</span>
+            <span className="logo-shop">Shop</span>
+          </div>
           <NavLink
             to="/homepage/"
             style={({ isActive }) =>
