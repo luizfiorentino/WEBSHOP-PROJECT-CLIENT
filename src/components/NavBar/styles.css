@@ -5,9 +5,10 @@
   display: flex;
   align-items: center;
   /* justify-content: center; */
-  flex-direction: column;
-}
 
+  /* flex-direction: column; */
+  font-family: "Aref Ruqaa Ink";
+}
 @media (min-width: 40rem) {
   .navbar-container {
     flex-direction: row;
@@ -17,10 +18,12 @@
 .logo-online {
   color: chartreuse;
   font-style: italic;
+  font-size: x-large;
 }
 .logo-shop {
   color: white;
   font-weight: 700;
+  font-size: x-large;
 }
 .navbar-left-side {
   margin-left: auto;
@@ -33,6 +36,13 @@
   align-items: center;
   justify-content: space-between;
   display: flex;
+}
+
+.navbar-links {
+  font-family: "Cookie";
+  font-size: x-large;
+  display: flex;
+  justify-content: space-around;
 }
 
 .left-inner {

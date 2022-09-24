@@ -11,35 +11,40 @@ function NavBar() {
       <div className="navbar-left-side">
         {/* <p>navbar left side</p> */}
         <div className="left-inner">
-          {/* <p>leftbar inner</p> */}.
+          {/* <p>leftbar inner</p> */}
           <div className="logo">
             <span className="logo-online">Online</span>
             <span className="logo-shop">Shop</span>
           </div>
-          <NavLink
-            to="/homepage/"
-            style={({ isActive }) =>
-              isActive ? { color: "white" } : undefined
-            }
-          >
-            Home Page
-          </NavLink>
-          <NavLink
-            to="/about"
-            style={({ isActive }) =>
-              isActive ? { color: "white" } : undefined
-            }
-          >
-            About
-          </NavLink>
-          <NavLink
-            to="/detailsPage"
-            style={({ isActive }) =>
-              isActive ? { color: "white" } : undefined
-            }
-          >
-            Details
-          </NavLink>
+          <div className="navbar-links">
+            <NavLink
+              end
+              to="/"
+              style={({ isActive }) =>
+                isActive ? { color: "white" } : undefined
+              }
+            >
+              Home Page
+            </NavLink>{" "}
+            {" ::::: "}{" "}
+            <NavLink
+              to="/about"
+              style={({ isActive }) =>
+                isActive ? { color: "white" } : undefined
+              }
+            >
+              About
+            </NavLink>{" "}
+            {" ::::: "}{" "}
+            <NavLink
+              to="/detailsPage"
+              style={({ isActive }) =>
+                isActive ? { color: "white" } : undefined
+              }
+            >
+              Details
+            </NavLink>
+          </div>
         </div>
 
         <div className="right-inner">
