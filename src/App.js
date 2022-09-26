@@ -1,6 +1,6 @@
 import "./App.css";
 import { HomePage, DetailsPage, NavBar, AboutPage } from "./components";
-import { Routes, Route, NavLink } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
