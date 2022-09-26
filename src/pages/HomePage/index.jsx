@@ -26,6 +26,12 @@ function HomePage() {
               key={product.id}
               id={product.id}
               title={product.title}
+              category={product.category.title}
+              // categoryId={product.categoryId}
+              image={product.mainImage}
+              price={product.price}
+              rating={product.rating}
+              // description={product.description}
             />
           ))
         ) : (

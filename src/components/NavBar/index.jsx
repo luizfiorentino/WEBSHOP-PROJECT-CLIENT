@@ -37,7 +37,7 @@ function NavBar() {
             </NavLink>{" "}
             {" ::::: "}{" "}
             <NavLink
-              to="/detailsPage"
+              to="/products/:id"
               style={({ isActive }) =>
                 isActive ? { color: "white" } : undefined
               }
