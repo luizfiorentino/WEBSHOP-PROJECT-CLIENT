@@ -6,7 +6,6 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/products/:id" element={<DetailsPage />} />

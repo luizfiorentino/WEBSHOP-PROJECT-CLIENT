@@ -3,8 +3,21 @@ import "./styles.css";
 import { NavLink } from "react-router-dom";
 import { FiUser, FiSearch } from "react-icons/fi";
 import { BiCartAlt, BiHeart } from "react-icons/bi";
+import { useState } from "react";
+import { HomePage } from "../../pages/HomePage";
+import { searchProduct } from "../../store/products/slice";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { selectProductSearch } from "../../store/products/selectors";
 
 function NavBar() {
+  const dispatch = useDispatch();
+  const searchItem = useSelector(selectProductSearch);
+  const [item, setItem] = useState("");
+  //console.log("searchTerm:", searchTerm);
+  console.log("ITEM:", item);
+  dispatch(searchProduct(item));
+
   return (
     <div className="navbar-container">
       {/* <p>navbar container</p> */}
@@ -49,7 +62,14 @@ function NavBar() {
 
         <div className="right-inner">
           {/* <p>right inner</p> */}
-          <input type="text" />
+          <input
+            type="text"
+            placeholder="Search..."
+            value={item}
+            onChange={(e) => {
+              setItem(e.target.value);
+            }}
+          />
 
           <button>
             <FiSearch />
