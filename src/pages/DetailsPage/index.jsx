@@ -6,12 +6,27 @@ import { useDispatch } from "react-redux";
 import { productDetailsThunk } from "../../store/thunks";
 import { useSelector } from "react-redux";
 import { selectProductDetails } from "../../store/products/selectors";
+import { addItem } from "../../store/shopcart/slice";
+import { selectCartItems } from "../../store/shopcart/selectors";
 
 function DetailsPage() {
   const dispatch = useDispatch();
   const productId = useParams().id;
   const productDetails = useSelector(selectProductDetails);
+  const cartItems = useSelector(selectCartItems);
+  const itemId = cartItems.length + 1;
   //console.log("Details:", productDetails);
+  const addProduct = () => {
+    console.log("addProduct", productDetails?.id);
+    const itemObject = {
+      id: itemId,
+      title: productDetails?.title,
+      price: productDetails?.price,
+      image: productDetails?.mainImage,
+    };
+
+    dispatch(addItem(itemObject));
+  };
 
   useEffect(() => {
     dispatch(productDetailsThunk(productId));
@@ -29,6 +44,7 @@ function DetailsPage() {
       <h3>$ {productDetails?.price}</h3>
       <img src={productDetails?.mainImage} />
       <h4>{productDetails?.description}</h4>
+      <button onClick={addProduct}>Add to shopcart</button>
       <button>
         <Link to={"/"}>Back to Home Page</Link>
       </button>

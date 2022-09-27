@@ -12,14 +12,16 @@ import { Link } from "react-router-dom";
 
 // FEATURES TO IMPLEMENT
 // OK - 1) searchbar a) product by name and b) category
-// 2) checkbox filter products by category
+// OK - 2) checkbox filter products by category
 // 3) pagination
-// 4) shopping cart
+// OK - 4) shopping cart
+// 4a) feature to avoid repeated items, instead shows one time and number of same items chosen -> eg. filter: includes().prodId
 // 5) add/ viewing review
 // 6) login/ registration
 // 7) orders
-// 8) footer
-// correct DB categories
+// 8) functional rating (stars)
+// 9) footer
+// 10) correct DB categories
 
 function HomePage() {
   const dispatch = useDispatch();
