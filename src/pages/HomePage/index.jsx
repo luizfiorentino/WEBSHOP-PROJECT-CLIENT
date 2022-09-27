@@ -9,6 +9,7 @@ import { NavBar } from "../../components/NavBar";
 import { selectProductSearch } from "../../store/products/selectors";
 import { selectCategoryData } from "../../store/categories/selectors";
 import { allCategoriesThunk } from "../../store/categories/thunks";
+
 // FEATURES TO IMPLEMENT
 // OK - 1) searchbar a) product by name and b) category
 // 2) checkbox filter products by category
