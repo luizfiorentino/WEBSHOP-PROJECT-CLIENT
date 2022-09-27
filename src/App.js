@@ -1,5 +1,11 @@
 import "./App.css";
-import { HomePage, DetailsPage, NavBar, AboutPage } from "./components";
+import {
+  HomePage,
+  DetailsPage,
+  NavBar,
+  AboutPage,
+  ShopCart,
+} from "./components";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -10,6 +16,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/products/:id" element={<DetailsPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/shopcart" element={<ShopCart />} />
       </Routes>
     </div>
   );

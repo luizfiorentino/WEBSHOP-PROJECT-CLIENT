@@ -9,7 +9,8 @@ import { NavBar } from "../../components/NavBar";
 import { selectProductSearch } from "../../store/products/selectors";
 import { selectCategoryData } from "../../store/categories/selectors";
 import { allCategoriesThunk } from "../../store/categories/thunks";
-
+import { selectCartItems } from "../../store/shopcart/selectors";
+import { Link } from "react-router-dom";
 // FEATURES TO IMPLEMENT
 // OK - 1) searchbar a) product by name and b) category
 // 2) checkbox filter products by category
@@ -27,6 +28,8 @@ function HomePage() {
   const categories = useSelector(selectCategoryData);
   //console.log("categories:", categories);
   const searchState = useSelector(selectProductSearch);
+  const shopCartItems = useSelector(selectCartItems);
+  console.log("shopCartItems", shopCartItems);
   console.log("from HP, search state", searchState);
   const [category, setCategory] = useState("all");
   console.log("category::", category);
@@ -98,6 +101,9 @@ function HomePage() {
 
   return (
     <div>
+      <button>
+        <Link to="/shopcart">Shopcart</Link>
+      </button>
       <h2>Welcome to onlineShop homepage!</h2>
       {/* {categories.map((category) => {
         return (

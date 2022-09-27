@@ -3,14 +3,19 @@ import "./styles.css";
 import { addItem } from "../../store/shopcart/slice";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectCartItems } from "../../store/shopcart/selectors";
 
 export default function ProductCard(props) {
   const dispatch = useDispatch();
+  const cartItems = useSelector(selectCartItems);
+  const itemId = cartItems.length + 1;
   const addProduct = () => {
     console.log("addProduct", props.id);
     const itemObject = {
+      id: itemId,
       title: props.title,
-      price: props.title,
+      price: props.price,
       image: props.image,
     };
 
