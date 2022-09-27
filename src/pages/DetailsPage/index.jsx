@@ -8,12 +8,17 @@ import { useSelector } from "react-redux";
 import { selectProductDetails } from "../../store/products/selectors";
 import { addItem } from "../../store/shopcart/slice";
 import { selectCartItems } from "../../store/shopcart/selectors";
+import { CommentForm } from "../../components/CommentForm/index";
+import { fetchComments } from "../../store/comments/thunks";
+import { selectAllComments } from "../../store/comments/selectors";
 
 function DetailsPage() {
   const dispatch = useDispatch();
   const productId = useParams().id;
   const productDetails = useSelector(selectProductDetails);
   const cartItems = useSelector(selectCartItems);
+  const comments = useSelector(selectAllComments);
+  console.log("comments::", comments);
   const itemId = cartItems.length + 1;
   //console.log("Details:", productDetails);
   const addProduct = () => {
@@ -48,6 +53,7 @@ function DetailsPage() {
       <button>
         <Link to={"/"}>Back to Home Page</Link>
       </button>
+      <CommentForm key={productDetails?.id} id={productDetails?.id} />
     </div>
   );
 }

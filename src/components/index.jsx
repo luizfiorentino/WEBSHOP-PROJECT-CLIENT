@@ -4,3 +4,4 @@ export * from "../pages/HomePage";
 export * from "../pages/AboutPage";
 export * from "./CartComponent";
 export * from "../pages/ShopCart";
+export * from "./CommentForm";

@@ -9,6 +9,7 @@ import { selectCategoryData } from "../../store/categories/selectors";
 import { allCategoriesThunk } from "../../store/categories/thunks";
 import { selectCartItems } from "../../store/shopcart/selectors";
 import { Link } from "react-router-dom";
+import { allCommentsThunk } from "../../store/comments/thunks";
 
 // FEATURES TO IMPLEMENT
 // OK - 1) searchbar a) product by name and b) category
@@ -41,6 +42,10 @@ function HomePage() {
 
   useEffect(() => {
     dispatch(allCategoriesThunk);
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(allCommentsThunk);
   }, [dispatch]);
 
   function filterProductsByCategory() {
