@@ -9,6 +9,7 @@ import { searchProduct } from "../../store/products/slice";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { selectProductSearch } from "../../store/products/selectors";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   const dispatch = useDispatch();
@@ -80,7 +81,9 @@ function NavBar() {
         {/* <p>navbar right side</p> */}
         <h2>
           <FiUser />
-          <BiCartAlt />
+          <Link to="/shopcart">
+            <BiCartAlt />
+          </Link>
           <BiHeart />
         </h2>
       </div>

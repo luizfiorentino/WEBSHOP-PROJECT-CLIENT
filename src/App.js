@@ -1,4 +1,5 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
 import {
   HomePage,
   DetailsPage,
@@ -6,7 +7,6 @@ import {
   AboutPage,
   ShopCart,
 } from "./components";
-import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (

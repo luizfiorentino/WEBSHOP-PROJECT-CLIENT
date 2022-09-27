@@ -1,16 +1,15 @@
 import React from "react";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { allProductsThunk } from "../../store/thunks";
 import { selectAllProducts } from "../../store/products/selectors";
 import ProductCard from "../../components/ProductCard/index.jsx";
-import { NavBar } from "../../components/NavBar";
 import { selectProductSearch } from "../../store/products/selectors";
 import { selectCategoryData } from "../../store/categories/selectors";
 import { allCategoriesThunk } from "../../store/categories/thunks";
 import { selectCartItems } from "../../store/shopcart/selectors";
 import { Link } from "react-router-dom";
+
 // FEATURES TO IMPLEMENT
 // OK - 1) searchbar a) product by name and b) category
 // 2) checkbox filter products by category
@@ -67,20 +66,6 @@ function HomePage() {
       }
     }
   }
-  //filterProductsByCategory();
-
-  // const productFilter = products?.filter((product) => {
-  //   if (searchState === "" || !searchState) {
-  //     return product;
-  //   } else {
-  //     return (
-  //       product.title.toLowerCase().includes(searchState?.toLowerCase()) ||
-  //       product?.category?.title
-  //         .toLowerCase()
-  //         .includes(searchState?.toLowerCase())
-  //     );
-  //   }
-  // });
 
   const displayProducts = () => {
     if (searchState === "") {
