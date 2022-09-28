@@ -18,14 +18,20 @@ export function postComment(productId, userId, comment) {
   return async function thunk(dispatch, getState) {
     try {
       dispatch(startLoading());
-      const userId = 1; // for now hardcoded
-      const newComment = { productId: productId, userId, comment: comment };
+      //const userId = 1; // for now hardcoded
+      // const newComment = {
+      //   productId: productId,
+      //   userId: userId,
+      //   comment: comment,
+      // };
       const postComment = await axios.post("http://localhost:4000/comments", {
-        newComment,
+        productId: productId,
+        userId: userId,
+        comment: comment,
       });
       const response = postComment.data;
       console.log("thunk response::", response);
-      dispatch(addComment(response.data));
+      dispatch(addComment(response));
     } catch (e) {
       console.log(e.message);
     }

@@ -9,7 +9,7 @@ import { selectProductDetails } from "../../store/products/selectors";
 import { addItem } from "../../store/shopcart/slice";
 import { selectCartItems } from "../../store/shopcart/selectors";
 import { CommentForm } from "../../components/CommentForm/index";
-import { fetchComments } from "../../store/comments/thunks";
+import { allCommentsThunk, fetchComments } from "../../store/comments/thunks";
 import { selectAllComments } from "../../store/comments/selectors";
 
 function DetailsPage() {
@@ -35,7 +35,7 @@ function DetailsPage() {
 
   useEffect(() => {
     dispatch(productDetailsThunk(productId));
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
