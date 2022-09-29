@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  me: null,
-  token: null,
+  me: [],
+  accessToken: null,
   loading: false,
 };
 
@@ -14,12 +14,19 @@ export const commentSlice = createSlice({
       state.loading = true;
     },
     signin: (state, action) => {
-      state.me = action.payload;
+      state.accessToken = action.payload.jwt;
+      state.me = action.payload.usersData;
       state.loading = false;
+    },
+    loggedIn: (state, action) => {
+      state.accessToken = action.payload.jwt;
+      state.me = [...action.payload.usersData];
+      state.loading = false;
+      //console.log("slice::", action.payload);
     },
   },
 });
 
-export const { startLoading, signin } = commentSlice.actions;
+export const { startLoading, signin, loggedIn } = commentSlice.actions;
 
 export default commentSlice.reducer;

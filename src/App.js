@@ -6,6 +6,7 @@ import {
   NavBar,
   AboutPage,
   ShopCart,
+  Login,
 } from "./components";
 import { SigninForm } from "./components/SigninForm";
 
@@ -13,6 +14,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+      <Login />
       <SigninForm />
       <Routes>
         <Route path="/" element={<HomePage />} />
