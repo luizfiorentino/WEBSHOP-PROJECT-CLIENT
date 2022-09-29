@@ -7,11 +7,13 @@ import {
   AboutPage,
   ShopCart,
 } from "./components";
+import { SigninForm } from "./components/SigninForm";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
+      <SigninForm />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/products/:id" element={<DetailsPage />} />

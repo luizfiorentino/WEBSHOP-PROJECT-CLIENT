@@ -6,3 +6,4 @@ export * from "./CartComponent";
 export * from "../pages/ShopCart";
 export * from "./CommentForm";
 export * from "./Comments";
+export * from "./SigninForm";
