@@ -17,8 +17,8 @@ import { allCommentsThunk } from "../../store/comments/thunks";
 // 3) pagination
 // OK - 4) shopping cart
 // 4a) feature to avoid repeated items, instead shows one time and number of same items chosen -> eg. filter: includes().prodId
-// 5) add/ viewing review
-// 6) login/ registration
+// OK 5) add/ viewing review
+// OK 6) login/ registration
 // 7) orders
 // 8) functional rating (stars)
 // 9) footer

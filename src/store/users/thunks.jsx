@@ -22,6 +22,7 @@ export function login(email, password, navigate) {
 
       const usersData = response.data;
       localStorage.setItem("token", jwt);
+      localStorage.setItem("userEmail", email);
       dispatch(loggedIn({ jwt, usersData }));
       dispatch(setUserEmail(email));
       navigate("/");
@@ -49,6 +50,22 @@ export function signinThunk({ name, email, password }) {
         console.log(e.message);
       }
     };
+  } catch (e) {
+    console.log(e.message);
+  }
+}
+
+export async function bootstrapLoginState(dispatch, useState) {
+  try {
+    const token = localStorage.getItem("token");
+    const email = localStorage.getItem("userEmail");
+    if (token) {
+      const response = await axios.get(`http://localhost:4000/login/me`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      dispatch(loggedIn({ jwt: token, usersData: response.data }));
+      dispatch(setUserEmail(email));
+    }
   } catch (e) {
     console.log(e.message);
   }
