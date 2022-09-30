@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../store/users/thunks";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { SigninForm } from "../../components";
 
 function Login() {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ function Login() {
 
   return (
     <div>
-      <h3>Signup</h3>
+      <h3>Please enter your email and password to login</h3>
       <form onSubmit={handleSubmit}>
         <label>
           Email:
@@ -45,6 +46,12 @@ function Login() {
           <button type="submit">Submit</button>
         </p>
       </form>
+      <h4>Don't have and account yet?</h4>
+      <p>
+        <Link to="/signin">
+          <button>Click here to sign in</button>
+        </Link>
+      </p>
     </div>
   );
 }

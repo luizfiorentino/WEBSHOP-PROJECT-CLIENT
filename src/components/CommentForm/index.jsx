@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectAllComments } from "../../store/comments/selectors";
 import { postComment } from "../../store/comments/thunks";
-import { productDetailsThunk } from "../../store/thunks";
 
 function CommentForm(props) {
   const dispatch = useDispatch();
@@ -17,7 +16,7 @@ function CommentForm(props) {
     event.preventDefault();
 
     const userId = 1; //hardcoded for now
-    // const newComment = { productId, userId, comment };
+
     dispatch(postComment(productId, userId, comment));
     console.log("newComment from form::");
 
@@ -29,10 +28,6 @@ function CommentForm(props) {
     (comment) => comment.productId === productId
   );
   console.log("this prod:", thisProductComments);
-
-  // useEffect(() => {
-  //   dispatch(productDetailsThunk(props.id));
-  // }, [dispatch]);
 
   return (
     <div>

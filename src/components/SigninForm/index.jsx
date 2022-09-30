@@ -23,32 +23,32 @@ function SigninForm() {
 
   return (
     <div>
-      <h3>Signup</h3>
+      <h3>To sign in, please enter your name, email, and a password:</h3>
       <form onSubmit={handleSubmit}>
         <label>
-          Name:
+          Name
           <input
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-        </label>
+        </label>{" "}
         <label>
-          Email:
+          Email
           <input
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-        </label>
+        </label>{" "}
         <label>
-          Password:
+          Password
           <input
             type="text"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-        </label>
+        </label>{" "}
         <p>
           <button type="submit">Submit</button>
         </p>

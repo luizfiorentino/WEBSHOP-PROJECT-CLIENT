@@ -4,6 +4,7 @@ const initialState = {
   me: [],
   accessToken: null,
   loading: false,
+  userEmail: null,
 };
 
 export const commentSlice = createSlice({
@@ -24,9 +25,13 @@ export const commentSlice = createSlice({
       state.loading = false;
       //console.log("slice::", action.payload);
     },
+    setUserEmail: (state, action) => {
+      state.userEmail = action.payload;
+    },
   },
 });
 
-export const { startLoading, signin, loggedIn } = commentSlice.actions;
+export const { startLoading, signin, loggedIn, setUserEmail } =
+  commentSlice.actions;
 
 export default commentSlice.reducer;

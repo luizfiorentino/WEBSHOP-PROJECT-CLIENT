@@ -1,4 +1,4 @@
-import { startLoading, loggedIn, signin } from "./slice";
+import { startLoading, loggedIn, signin, setUserEmail } from "./slice";
 import axios from "axios";
 
 export function login(email, password, navigate) {
@@ -23,6 +23,7 @@ export function login(email, password, navigate) {
       const usersData = response.data;
       localStorage.setItem("token", jwt);
       dispatch(loggedIn({ jwt, usersData }));
+      dispatch(setUserEmail(email));
       navigate("/");
     } catch (e) {
       console.log({ "error at login": e.message });

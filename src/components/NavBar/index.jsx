@@ -4,20 +4,33 @@ import { NavLink } from "react-router-dom";
 import { FiUser, FiSearch } from "react-icons/fi";
 import { BiCartAlt, BiHeart } from "react-icons/bi";
 import { useState } from "react";
-import { HomePage } from "../../pages/HomePage";
 import { searchProduct } from "../../store/products/slice";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { selectProductSearch } from "../../store/products/selectors";
 import { Link } from "react-router-dom";
+import {
+  selectUserProfile,
+  selectUserEmail,
+} from "../../store/users/selectors";
 
 function NavBar() {
   const dispatch = useDispatch();
   const searchItem = useSelector(selectProductSearch);
+  const userData = useSelector(selectUserProfile);
+  const userEmail = useSelector(selectUserEmail);
+  console.log("useEmailSelector::", userEmail);
+  console.log("from Navbar::", userData);
   const [item, setItem] = useState("");
   //console.log("searchTerm:", searchTerm);
   console.log("ITEM:", item);
   dispatch(searchProduct(item));
+
+  const userName = userData
+    ? userData.find((user) => user.email === userEmail)?.name
+    : null;
+
+  console.log("const names::", userName);
 
   return (
     <div className="navbar-container">
@@ -70,20 +83,24 @@ function NavBar() {
             onChange={(e) => {
               setItem(e.target.value);
             }}
-          />
-
+          ></input>
           <button>
             <FiSearch />
           </button>
+        </div>
+        <div className="welcome-message">
+          <p>{userName ? `Welcome, ${userName}!` : "You're not logged"}</p>
         </div>
       </div>
       <div className="navbar-right-side">
         {/* <p>navbar right side</p> */}
         <h2>
-          <FiUser />
+          <Link to="/login">
+            <FiUser />
+          </Link>{" "}
           <Link to="/shopcart">
             <BiCartAlt />
-          </Link>
+          </Link>{" "}
           <BiHeart />
         </h2>
       </div>
