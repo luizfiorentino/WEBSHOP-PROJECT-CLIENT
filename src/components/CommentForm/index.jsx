@@ -11,14 +11,11 @@ function CommentForm(props) {
   const [comment, setComment] = useState("");
   const comments = useSelector(selectAllComments);
   console.log("com form:", comments);
-  const commentsThisProduct = comments.filter(
-    (comment) => comment.productId === props.id
-  );
-  console.log("comments this prod::", commentsThisProduct);
+  const productId = props.id;
 
   function handleSubmit(event) {
     event.preventDefault();
-    const productId = props.id;
+
     const userId = 1; //hardcoded for now
     // const newComment = { productId, userId, comment };
     dispatch(postComment(productId, userId, comment));
@@ -28,9 +25,14 @@ function CommentForm(props) {
     setComment("");
   }
 
-  useEffect(() => {
-    dispatch(productDetailsThunk(props.id));
-  }, []);
+  const thisProductComments = comments.filter(
+    (comment) => comment.productId === productId
+  );
+  console.log("this prod:", thisProductComments);
+
+  // useEffect(() => {
+  //   dispatch(productDetailsThunk(props.id));
+  // }, [dispatch]);
 
   return (
     <div>
@@ -59,10 +61,10 @@ function CommentForm(props) {
       </form>
 
       <ul>
-        {commentsThisProduct.length === 0 ? (
+        {thisProductComments.length === 0 ? (
           <p>No comments for this product yet</p>
         ) : (
-          commentsThisProduct.map((comment) => <li>{comment.comment}</li>)
+          thisProductComments.map((comment) => <li>{comment.comment}</li>)
         )}
       </ul>
     </div>
