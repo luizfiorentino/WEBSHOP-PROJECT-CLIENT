@@ -4,13 +4,20 @@ import {
   selectCartItems,
   selectTotalPurchaseAmount,
 } from "../../store/shopcart/selectors";
+import { postNewOrder } from "../../store/orders/thunks";
 
 function OrderPage() {
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
   const totalAmount = useSelector(selectTotalPurchaseAmount);
   console.log("total AMOUNT::", totalAmount);
+
   // userId, totalToPay, orderNumber
+  const newOrder = {
+    userId: 1, //hardcoded for now
+    totalToPay: totalAmount,
+    orderNumber: Math.round(Math.random() * 10000000),
+  };
 
   return (
     <div>
@@ -25,7 +32,9 @@ function OrderPage() {
       </ul>
       <h4>Total: $ {totalAmount}</h4>
       <div>
-        <button>Go to payment</button>
+        <button onClick={() => dispatch(postNewOrder(newOrder))}>
+          Confirm - Go to payment
+        </button>
       </div>
     </div>
   );

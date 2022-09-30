@@ -14,16 +14,15 @@ export const allOrdersThunk = async (dispatch, getState) => {
   }
 };
 
-export function postNewOrder(orderNumber, userId, totalToPay, paid) {
+export function postNewOrder(newOrder) {
   return async function thunk(dispatch, getState) {
     try {
       dispatch(startLoading());
 
       const postOrder = await axios.post("http://localhost:4000/orders", {
-        orderNumber: orderNumber,
-        userId: userId,
-        totalToPay: totalToPay,
-        paid: paid,
+        userId: newOrder.userId,
+        totalToPay: newOrder.totalToPay,
+        orderNumber: newOrder.orderNumber,
       });
       const response = postOrder.data;
       console.log("order post thunk::", response);

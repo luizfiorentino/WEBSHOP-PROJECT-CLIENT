@@ -22,8 +22,9 @@ export const commentSlice = createSlice({
       state.loading = false;
     },
     placeOrder: (state, action) => {
-      state.allComments = [...state.allOrders, action.payload];
+      state.allOrders = [...state.allOrders, action.payload];
       state.loading = false;
+      console.log("neworder slice", action.payload);
     },
     placeOrderItem: (state, action) => {
       state.allOrders = [...state.allOrderItems, action.payload];
