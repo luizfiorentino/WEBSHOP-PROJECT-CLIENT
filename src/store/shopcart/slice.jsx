@@ -4,6 +4,7 @@ const initialState = {
   loading: false,
   totalValue: 0,
   listOfProducts: [],
+  totalPurchaseValue: 0,
 };
 
 export const productListSlice = createSlice({
@@ -18,8 +19,12 @@ export const productListSlice = createSlice({
         (product) => product.id !== action.payload
       );
     },
+    setTotalValue: (state, action) => {
+      state.totalPurchaseValue = action.payload;
+      console.log("totalValue slice:", action.payload);
+    },
   },
 });
 
-export const { addItem, removeItem } = productListSlice.actions;
+export const { addItem, removeItem, setTotalValue } = productListSlice.actions;
 export default productListSlice.reducer;

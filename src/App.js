@@ -9,6 +9,7 @@ import {
   AboutPage,
   ShopCart,
   Login,
+  OrderPage,
 } from "./components";
 import { SigninForm } from "./components/SigninForm";
 import { bootstrapLoginState } from "./store/users/thunks";
@@ -30,6 +31,7 @@ function App() {
         <Route path="/shopcart" element={<ShopCart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signin" element={<SigninForm />} />
+        <Route path="/order" element={<OrderPage />} />
       </Routes>
     </div>
   );

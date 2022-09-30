@@ -1,0 +1,38 @@
+import { createSlice } from "@reduxjs/toolkit";
+
+const initialState = {
+  loading: false,
+  allOrders: [],
+  allOrderItems: [],
+};
+
+export const commentSlice = createSlice({
+  name: "orders",
+  initialState,
+  reducers: {
+    startLoading: (state) => {
+      state.loading = true;
+    },
+    fetchOrders: (state, action) => {
+      state.allOrders = [...action.payload];
+      state.loading = false;
+    },
+    fetchOrderItems: (state, action) => {
+      state.allOrderItems = [...action.payload];
+      state.loading = false;
+    },
+    placeOrder: (state, action) => {
+      state.allComments = [...state.allOrders, action.payload];
+      state.loading = false;
+    },
+    placeOrderItem: (state, action) => {
+      state.allOrders = [...state.allOrderItems, action.payload];
+      state.loading = false;
+    },
+  },
+});
+
+export const { startLoading, fetchOrders, placeOrder, placeOrderItem } =
+  commentSlice.actions;
+
+export default commentSlice.reducer;
