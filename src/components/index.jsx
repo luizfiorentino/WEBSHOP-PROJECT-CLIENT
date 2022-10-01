@@ -8,3 +8,4 @@ export * from "./CommentForm";
 export * from "./SigninForm";
 export * from "../pages/Login";
 export * from "../pages/OrderPage";
+export * from "../pages/RedirectLogin";

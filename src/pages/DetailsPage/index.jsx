@@ -11,6 +11,7 @@ import { selectCartItems } from "../../store/shopcart/selectors";
 import { CommentForm } from "../../components/CommentForm/index";
 import { allCommentsThunk, fetchComments } from "../../store/comments/thunks";
 import { selectAllComments } from "../../store/comments/selectors";
+import { selectToken } from "../../store/users/selectors";
 
 function DetailsPage() {
   const dispatch = useDispatch();
@@ -20,7 +21,9 @@ function DetailsPage() {
   const comments = useSelector(selectAllComments);
   console.log("comments::", comments);
   const itemId = cartItems.length + 1;
+  const token = useSelector(selectToken);
   //console.log("Details:", productDetails);
+
   const addProduct = () => {
     console.log("addProduct", productDetails?.id);
     const itemObject = {
@@ -49,7 +52,8 @@ function DetailsPage() {
       <h3>$ {productDetails?.price}</h3>
       <img src={productDetails?.mainImage} />
       <h4>{productDetails?.description}</h4>
-      <button onClick={addProduct}>Add to shopcart</button>
+      {token ? <button onClick={addProduct}>Add to shopcart</button> : null}
+
       <button>
         <Link to={"/"}>Back to Home Page</Link>
       </button>

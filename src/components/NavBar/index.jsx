@@ -109,9 +109,15 @@ function NavBar() {
               <HiOutlineLogout onClick={() => dispatch(logout())} />
             </Link>
           )}
-          <Link to="/shopcart">
-            <BiCartAlt />
-          </Link>{" "}
+          {token ? (
+            <Link to="/shopcart">
+              <BiCartAlt />
+            </Link>
+          ) : (
+            <Link to="/redirect">
+              <BiCartAlt />
+            </Link>
+          )}{" "}
           <BiHeart />
         </h2>
       </div>

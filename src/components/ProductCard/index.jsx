@@ -5,11 +5,13 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectCartItems } from "../../store/shopcart/selectors";
+import { selectToken } from "../../store/users/selectors";
 
 export default function ProductCard(props) {
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
   const itemId = cartItems.length + 1;
+  const token = useSelector(selectToken);
   const addProduct = () => {
     console.log("addProduct", props.id);
     const itemObject = {
@@ -28,7 +30,7 @@ export default function ProductCard(props) {
       <h4>Rating: {props.rating}</h4>
       <img src={props.image} style={{ width: 250 }} />
       <h4>$ {props.price}</h4>
-      <button onClick={addProduct}>Add to shopcart</button>
+      {token ? <button onClick={addProduct}>Add to shopcart</button> : null}
       <button>
         <Link to={`/products/${props.id}`}>More</Link>
       </button>

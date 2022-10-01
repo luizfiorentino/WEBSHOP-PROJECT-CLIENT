@@ -10,6 +10,7 @@ import {
   ShopCart,
   Login,
   OrderPage,
+  RedirectLogin,
 } from "./components";
 import { SigninForm } from "./components/SigninForm";
 import { bootstrapLoginState } from "./store/users/thunks";
@@ -32,6 +33,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signin" element={<SigninForm />} />
         <Route path="/order" element={<OrderPage />} />
+        <Route path="/redirect" element={<RedirectLogin />} />
       </Routes>
     </div>
   );
