@@ -30,7 +30,7 @@ export const commentSlice = createSlice({
   },
 });
 
-export const { startLoading, signin, loggedIn, setUserEmail } =
+export const { startLoading, signin, loggedIn, setUserEmail, logout } =
   commentSlice.actions;
 
 export default commentSlice.reducer;

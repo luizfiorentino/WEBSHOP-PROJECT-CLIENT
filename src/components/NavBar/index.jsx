@@ -2,7 +2,8 @@ import React from "react";
 import "./styles.css";
 import { NavLink } from "react-router-dom";
 import { FiUser, FiSearch } from "react-icons/fi";
-import { BiCartAlt, BiHeart } from "react-icons/bi";
+import { BiCartAlt, BiHeart, BiLogOut } from "react-icons/bi";
+import { HiOutlineLogout } from "react-icons/hi";
 import { useState } from "react";
 import { searchProduct } from "../../store/products/slice";
 import { useSelector } from "react-redux";
@@ -13,6 +14,8 @@ import {
   selectUserProfile,
   selectUserEmail,
 } from "../../store/users/selectors";
+import { selectToken } from "../../store/users/selectors";
+import { logout } from "../../store/users/slice";
 
 function NavBar() {
   const dispatch = useDispatch();
@@ -22,6 +25,8 @@ function NavBar() {
   console.log("useEmailSelector::", userEmail);
   console.log("from Navbar::", userData);
   const [item, setItem] = useState("");
+  const token = useSelector(selectToken);
+  //console.log("accesstoken::", token);
   //console.log("searchTerm:", searchTerm);
   console.log("ITEM:", item);
   dispatch(searchProduct(item));
@@ -95,9 +100,15 @@ function NavBar() {
       <div className="navbar-right-side">
         {/* <p>navbar right side</p> */}
         <h2>
-          <Link to="/login">
-            <FiUser />
-          </Link>{" "}
+          {!token ? (
+            <Link to="/login">
+              <FiUser />
+            </Link>
+          ) : (
+            <Link>
+              <HiOutlineLogout onClick={() => dispatch(logout())} />
+            </Link>
+          )}
           <Link to="/shopcart">
             <BiCartAlt />
           </Link>{" "}
