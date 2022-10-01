@@ -14,11 +14,6 @@ export const commentSlice = createSlice({
     startLoading: (state) => {
       state.loading = true;
     },
-    signin: (state, action) => {
-      state.accessToken = action.payload.jwt;
-      state.me = action.payload.usersData;
-      state.loading = false;
-    },
     loggedIn: (state, action) => {
       state.accessToken = action.payload.jwt;
       state.me = [...action.payload.usersData];
@@ -27,6 +22,10 @@ export const commentSlice = createSlice({
     },
     setUserEmail: (state, action) => {
       state.userEmail = action.payload;
+    },
+    logout: (state) => {
+      localStorage.removeItem("token");
+      return initialState;
     },
   },
 });

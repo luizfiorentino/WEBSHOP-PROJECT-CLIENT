@@ -1,4 +1,4 @@
-import { startLoading, loggedIn, signin, setUserEmail } from "./slice";
+import { startLoading, loggedIn, setUserEmail } from "./slice";
 import axios from "axios";
 
 export function login(email, password, navigate) {
@@ -32,20 +32,34 @@ export function login(email, password, navigate) {
   };
 }
 
-export function signinThunk({ name, email, password }) {
+export function signinThunk(name, email, password, navigate) {
   try {
-    return async function (dispatch, getState) {
+    return async function thunk(dispatch, getState) {
       try {
         dispatch(startLoading());
         const newUser = await axios.post("http://localhost:4000/users", {
-          name,
-          email,
-          password,
+          name: name,
+          email: email,
+          password: password,
         });
         const response = newUser.data;
         console.log("thunk new user::", response);
 
-        dispatch(signin(response));
+        const login = await axios.post(`http://localhost:4000/login`, {
+          email: email,
+          password: password,
+        });
+        const { jwt } = login.data;
+        const meRequest = await axios.get(`http://localhost:4000/login/me`, {
+          headers: { Authorization: `Bearer ${jwt}` },
+        });
+        const usersData = meRequest.data;
+        localStorage.setItem("token", jwt);
+        localStorage.setItem("userEmail", email);
+
+        dispatch(loggedIn({ jwt, usersData }));
+        dispatch(setUserEmail(email));
+        navigate("/");
       } catch (e) {
         console.log(e.message);
       }

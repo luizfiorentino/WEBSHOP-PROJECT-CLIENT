@@ -1,3 +1,3 @@
-export const selectUserProfile = (state) => [...state.users.me];
+export const selectUserProfile = (state) => state.users.me;
 
 export const selectUserEmail = (state) => state.users.userEmail;

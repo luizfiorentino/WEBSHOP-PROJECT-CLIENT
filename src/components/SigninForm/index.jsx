@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { signinThunk } from "../../store/users/thunks";
+import { useNavigate } from "react-router-dom";
 
 function SigninForm() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,7 +17,7 @@ function SigninForm() {
       email: email,
       password: password,
     };
-    dispatch(signinThunk(newUser));
+    dispatch(signinThunk(name, email, password, navigate));
     setName("");
     setEmail("");
     setPassword("");

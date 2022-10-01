@@ -5,6 +5,7 @@ import {
   selectTotalPurchaseAmount,
 } from "../../store/shopcart/selectors";
 import { postNewOrder } from "../../store/orders/thunks";
+import { resetShopcart } from "../../store/shopcart/slice";
 
 function OrderPage() {
   const dispatch = useDispatch();
@@ -32,7 +33,12 @@ function OrderPage() {
       </ul>
       <h4>Total: $ {totalAmount}</h4>
       <div>
-        <button onClick={() => dispatch(postNewOrder(newOrder))}>
+        <button
+          onClick={() => {
+            dispatch(postNewOrder(newOrder));
+            dispatch(resetShopcart());
+          }}
+        >
           Confirm - Go to payment
         </button>
       </div>

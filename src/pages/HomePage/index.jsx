@@ -19,7 +19,9 @@ import { allCommentsThunk } from "../../store/comments/thunks";
 // 4a) feature to avoid repeated items, instead shows one time and number of same items chosen -> eg. filter: includes().prodId
 // OK 5) add/ viewing review
 // OK 6) login/ registration
-// 7) orders
+// OK 7) orders
+//::IMPLEMENT: user can only add to shop cart and place order when logged in::
+// 7A) payment page -> DB new table
 // 8) functional rating (stars)
 // 9) footer
 // 10) correct DB categories

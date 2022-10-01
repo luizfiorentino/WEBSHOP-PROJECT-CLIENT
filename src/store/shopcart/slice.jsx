@@ -22,8 +22,12 @@ export const productListSlice = createSlice({
       state.totalPurchaseValue = action.payload;
       console.log("totalValue slice:", action.payload);
     },
+    resetShopcart: (state) => {
+      state.listOfProducts = [];
+    },
   },
 });
 
-export const { addItem, removeItem, setTotalValue } = productListSlice.actions;
+export const { addItem, removeItem, setTotalValue, resetShopcart } =
+  productListSlice.actions;
 export default productListSlice.reducer;
