@@ -9,7 +9,6 @@ import { selectProductDetails } from "../../store/products/selectors";
 import { addItem } from "../../store/shopcart/slice";
 import { selectCartItems } from "../../store/shopcart/selectors";
 import { CommentForm } from "../../components/CommentForm/index";
-import { allCommentsThunk, fetchComments } from "../../store/comments/thunks";
 import { selectAllComments } from "../../store/comments/selectors";
 import { selectToken } from "../../store/users/selectors";
 
@@ -23,6 +22,10 @@ function DetailsPage() {
   const itemId = cartItems.length + 1;
   const token = useSelector(selectToken);
   //console.log("Details:", productDetails);
+
+  const commentsForThisProduct = comments.filter(
+    (comment) => comment.productId === productDetails?.id
+  );
 
   const addProduct = () => {
     console.log("addProduct", productDetails?.id);
@@ -57,7 +60,22 @@ function DetailsPage() {
       <button>
         <Link to={"/"}>Back to Home Page</Link>
       </button>
-      <CommentForm key={productDetails?.id} id={productDetails?.id} />
+      {!token ? (
+        <h4>Please log in to post your review</h4>
+      ) : (
+        <CommentForm key={productDetails?.id} id={productDetails?.id} />
+      )}
+      <h4>See what costumers think of our products:</h4>
+      {commentsForThisProduct.length === 0 ? (
+        <h5>There are currently no reviews for this product</h5>
+      ) : (
+        <p>Total reviews: {commentsForThisProduct.length}</p>
+      )}
+      <ul>
+        {comments
+          ? commentsForThisProduct.map((comment) => <li>{comment.comment}</li>)
+          : null}
+      </ul>
     </div>
   );
 }

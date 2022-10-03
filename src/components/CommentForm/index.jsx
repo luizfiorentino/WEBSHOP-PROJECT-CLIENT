@@ -31,7 +31,7 @@ function CommentForm(props) {
 
   return (
     <div>
-      <h3>Leave a comment!</h3>
+      <h4>Post your review!</h4>
       <form onSubmit={handleSubmit}>
         <label>
           Comment:{" "}
@@ -54,14 +54,13 @@ function CommentForm(props) {
           <button type="submit">Submit</button>{" "}
         </p>
       </form>
-
-      <ul>
+      {/* <ul>
         {thisProductComments.length === 0 ? (
           <p>No comments for this product yet</p>
         ) : (
           thisProductComments.map((comment) => <li>{comment.comment}</li>)
         )}
-      </ul>
+      </ul> */}
     </div>
   );
 }
