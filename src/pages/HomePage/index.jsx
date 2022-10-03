@@ -10,7 +10,7 @@ import { allCategoriesThunk } from "../../store/categories/thunks";
 import { selectCartItems } from "../../store/shopcart/selectors";
 import { Link } from "react-router-dom";
 import { allCommentsThunk } from "../../store/comments/thunks";
-
+import { nextPage, previousPage } from "../../store/products/slice";
 // FEATURES TO IMPLEMENT
 // OK - 1) searchbar a) product by name and b) category
 // OK - 2) checkbox filter products by category
@@ -20,7 +20,7 @@ import { allCommentsThunk } from "../../store/comments/thunks";
 // OK 5) add/ viewing review
 // OK 6) login/ registration
 // OK 7) orders
-//::IMPLEMENT: user can only add to shop cart and place order when logged in::
+// OK ::IMPLEMENT: user can only add to shop cart and place order when logged in::
 // 7A) payment page -> DB new table
 // 8) functional rating (stars)
 // 9) footer
@@ -107,7 +107,6 @@ function HomePage() {
           </label>
         );
       })} */}
-
       <h3>Choose a category</h3>
       <select value={category} onChange={(e) => setCategory(e.target.value)}>
         <option value="all">All products</option>
@@ -119,6 +118,22 @@ function HomePage() {
           );
         })}
       </select>
+      <button
+        onClick={() => {
+          dispatch(nextPage());
+          dispatch(allProductsThunk);
+        }}
+      >
+        Next
+      </button>{" "}
+      <button
+        onClick={() => {
+          dispatch(previousPage());
+          dispatch(allProductsThunk);
+        }}
+      >
+        Previous
+      </button>
       <ul>
         {displayProducts() ? (
           displayProducts()?.map((product) => (
