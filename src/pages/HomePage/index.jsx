@@ -10,11 +10,12 @@ import { allCategoriesThunk } from "../../store/categories/thunks";
 import { selectCartItems } from "../../store/shopcart/selectors";
 import { Link } from "react-router-dom";
 import { allCommentsThunk } from "../../store/comments/thunks";
-import { nextPage, previousPage } from "../../store/products/slice";
+import "./styles.css";
+
 // FEATURES TO IMPLEMENT
 // OK - 1) searchbar a) product by name and b) category
 // OK - 2) checkbox filter products by category
-// 3) pagination
+// OK 3) pagination
 // OK - 4) shopping cart
 // 4a) feature to avoid repeated items, instead shows one time and number of same items chosen -> eg. filter: includes().prodId
 // OK 5) add/ viewing review
@@ -55,7 +56,12 @@ function HomePage() {
 
   const displayPageNumbers = pages.map((pageNumber) => {
     return (
-      <li key={pageNumber} id={pageNumber} onClick={handleClick}>
+      <li
+        key={pageNumber}
+        id={pageNumber}
+        onClick={handleClick}
+        className={currentPage === pageNumber ? "active" : null}
+      >
         {pageNumber}
       </li>
     );
@@ -145,7 +151,10 @@ function HomePage() {
           );
         })}
       </select>
-      {category === "all" ? displayPageNumbers : null}
+      <ul className="pageNumbers">
+        {category === "all" ? displayPageNumbers : null}
+      </ul>
+
       <ul>
         {displayProducts() ? (
           displayProducts()?.map((product) => (
