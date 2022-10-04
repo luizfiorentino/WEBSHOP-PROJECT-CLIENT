@@ -3,8 +3,6 @@ import { FaStar } from "react-icons/fa";
 import "./styles.css";
 
 const ProductStarRating = (props) => {
-  // const [rating, setRating] = useState(null);
-
   return (
     <div>
       {[...Array(5)].map((star, i) => {
@@ -12,12 +10,6 @@ const ProductStarRating = (props) => {
 
         return (
           <label>
-            <input
-              type="radio"
-              name="rating"
-              //   value={ratingValue}
-              //   onClick={() => setRating(ratingValue)}
-            />
             <FaStar
               className="star"
               color={

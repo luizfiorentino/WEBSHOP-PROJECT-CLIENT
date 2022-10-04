@@ -4,6 +4,7 @@ import "./styles.css";
 
 const StarRating = () => {
   const [rating, setRating] = useState(null);
+  const [hover, setHover] = useState(null);
 
   return (
     <div>
@@ -20,8 +21,10 @@ const StarRating = () => {
             />
             <FaStar
               className="star"
-              color={ratingValue <= rating ? "#ffc107" : "#e4e5e9"}
+              color={ratingValue <= (hover || rating) ? "#ffc107" : "#e4e5e9"}
               size={20}
+              onMouseEnter={() => setHover(ratingValue)}
+              onMouseLeave={() => setHover(null)}
             />
           </label>
         );
