@@ -17,7 +17,7 @@ export const productListSlice = createSlice({
     },
     fetchAllProducts: (state, action) => {
       state.allProducts = [...action.payload];
-      console.log("action.payload:::", action.payload);
+      console.log("from slice action.payload:::", action.payload);
       state.loading = false;
     },
     fetchProductDetails: (state, action) => {
@@ -27,13 +27,6 @@ export const productListSlice = createSlice({
     searchProduct: (state, action) => {
       state.productSearch = action.payload;
     },
-    nextPage: (state) => {
-      state.page = state.page + 1;
-      console.log("slice nextPage", state.page);
-    },
-    previousPage: (state) => {
-      state.page = state.page - 1;
-    },
   },
 });
 
@@ -42,7 +35,5 @@ export const {
   fetchAllProducts,
   fetchProductDetails,
   searchProduct,
-  nextPage,
-  previousPage,
 } = productListSlice.actions;
 export default productListSlice.reducer;

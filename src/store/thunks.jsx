@@ -8,11 +8,8 @@ import axios from "axios";
 export const allProductsThunk = async (dispatch, getState) => {
   try {
     dispatch(startLoading());
-    const page = getState().productList.page;
-    console.log("prod thunk page::::", page);
-    const productList = await axios.get(
-      `http://localhost:4000/products?page=${page}&limit=10`
-    );
+
+    const productList = await axios.get(`http://localhost:4000/products`);
 
     // console.log("prod list thunk", productList);
     const response = productList.data;

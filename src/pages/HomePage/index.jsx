@@ -36,6 +36,31 @@ function HomePage() {
   console.log("shopCartItems", shopCartItems);
   console.log("from HP, search state", searchState);
   const [category, setCategory] = useState("all");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(5);
+
+  const handleClick = (event) => {
+    setCurrentPage(Number(event.target.id));
+    console.log("eventtaget", event.target.id);
+  };
+
+  const pages = [];
+  for (let i = 1; i <= Math.ceil(products.length / itemsPerPage); i++) {
+    pages.push(i);
+  }
+
+  const indexLastItem = currentPage * itemsPerPage;
+  const indexFirstItem = indexLastItem - itemsPerPage;
+  const currentItems = products.slice(indexFirstItem, indexLastItem);
+
+  const displayPageNumbers = pages.map((pageNumber) => {
+    return (
+      <li key={pageNumber} id={pageNumber} onClick={handleClick}>
+        {pageNumber}
+      </li>
+    );
+  });
+
   console.log("category::", category);
 
   useEffect(() => {
@@ -77,7 +102,9 @@ function HomePage() {
   }
 
   const displayProducts = () => {
-    if (searchState === "") {
+    if (searchState === "" && category === "all") {
+      return currentItems;
+    } else if (searchState === "" && category !== "all") {
       return filterProductsByCategory();
     } else if (searchState !== "") {
       return [...products].filter((product) => {
@@ -118,22 +145,7 @@ function HomePage() {
           );
         })}
       </select>
-      <button
-        onClick={() => {
-          dispatch(nextPage());
-          dispatch(allProductsThunk);
-        }}
-      >
-        Next
-      </button>{" "}
-      <button
-        onClick={() => {
-          dispatch(previousPage());
-          dispatch(allProductsThunk);
-        }}
-      >
-        Previous
-      </button>
+      {category === "all" ? displayPageNumbers : null}
       <ul>
         {displayProducts() ? (
           displayProducts()?.map((product) => (
