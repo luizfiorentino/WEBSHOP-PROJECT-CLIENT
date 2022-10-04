@@ -11,6 +11,7 @@ import { selectCartItems } from "../../store/shopcart/selectors";
 import { CommentForm } from "../../components/CommentForm/index";
 import { selectAllComments } from "../../store/comments/selectors";
 import { selectToken } from "../../store/users/selectors";
+import { StarRating } from "../../components/StarRating";
 
 function DetailsPage() {
   const dispatch = useDispatch();
@@ -45,10 +46,13 @@ function DetailsPage() {
 
   return (
     <div>
-      <h3>Product's Details</h3>
       <button>
         <Link to={"/"}>Back to Home Page</Link>
       </button>
+      <h3>Product's Details</h3>
+      <h4>Rate this product</h4>
+      <StarRating />
+
       <h3>{productDetails?.title}</h3>
       <h4>Category: {productDetails?.category.title}</h4>
       <h4>Rating: {productDetails?.rating}</h4>

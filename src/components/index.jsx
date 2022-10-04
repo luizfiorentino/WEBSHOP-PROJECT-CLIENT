@@ -10,3 +10,4 @@ export * from "../pages/Login";
 export * from "../pages/OrderPage";
 export * from "../pages/RedirectLogin";
 export * from "./StarRating";
+export * from "./ProductStarRating";

@@ -6,7 +6,8 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectCartItems } from "../../store/shopcart/selectors";
 import { selectToken } from "../../store/users/selectors";
-import { StarRating } from "../StarRating";
+import { ProductStarRating } from "../ProductStarRating";
+
 export default function ProductCard(props) {
   const dispatch = useDispatch();
   const cartItems = useSelector(selectCartItems);
@@ -26,9 +27,9 @@ export default function ProductCard(props) {
 
   return (
     <div className="product-card-main">
-      <StarRating />
       <h3>{props.title}</h3>
-      <h4>Rating: {props.rating}</h4>
+      {/* <h4>Rating: {props.rating}</h4> */}
+      <ProductStarRating key={props.id} rating={props.rating} />
       <img src={props.image} style={{ width: 250 }} />
       <h4>$ {props.price}</h4>
       {token ? <button onClick={addProduct}>Add to shopcart</button> : null}

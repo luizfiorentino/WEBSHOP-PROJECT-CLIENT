@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import "./styles.css";
 
-const StarRating = () => {
-  const [rating, setRating] = useState(null);
+const ProductStarRating = (props) => {
+  // const [rating, setRating] = useState(null);
 
   return (
     <div>
@@ -15,12 +15,14 @@ const StarRating = () => {
             <input
               type="radio"
               name="rating"
-              value={ratingValue}
-              onClick={() => setRating(ratingValue)}
+              //   value={ratingValue}
+              //   onClick={() => setRating(ratingValue)}
             />
             <FaStar
               className="star"
-              color={ratingValue <= rating ? "#ffc107" : "#e4e5e9"}
+              color={
+                ratingValue <= Math.ceil(props.rating) ? "#ffc107" : "#e4e5e9"
+              }
               size={20}
             />
           </label>
@@ -29,4 +31,4 @@ const StarRating = () => {
     </div>
   );
 };
-export { StarRating };
+export { ProductStarRating };

@@ -10,6 +10,7 @@ import { allCategoriesThunk } from "../../store/categories/thunks";
 import { selectCartItems } from "../../store/shopcart/selectors";
 import { Link } from "react-router-dom";
 import { allCommentsThunk } from "../../store/comments/thunks";
+import { ProductStarRating } from "../../components";
 import "./styles.css";
 
 // FEATURES TO IMPLEMENT
