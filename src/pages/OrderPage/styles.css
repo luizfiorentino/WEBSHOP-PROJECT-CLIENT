@@ -1,0 +1,11 @@
+.order-form {
+  /* align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); */
+
+  display: flex;
+
+  /* flex-direction:; */
+  /* flex-wrap: row; */
+}
+/* Using Float in list. Using column-count in list. */

@@ -10,7 +10,6 @@ import { allCategoriesThunk } from "../../store/categories/thunks";
 import { selectCartItems } from "../../store/shopcart/selectors";
 import { Link } from "react-router-dom";
 import { allCommentsThunk } from "../../store/comments/thunks";
-import { ProductStarRating } from "../../components";
 import "./styles.css";
 
 // FEATURES TO IMPLEMENT
@@ -23,8 +22,9 @@ import "./styles.css";
 // OK 6) login/ registration
 // OK 7) orders
 // OK ::IMPLEMENT: user can only add to shop cart and place order when logged in::
+// OK Product avaliation stars (a) from DB in home page and (b) client evaluation in details page
 // 7A) payment page -> DB new table
-// 8) functional rating (stars)
+// OK 8) functional rating (stars)
 // 9) footer
 // 10) correct DB categories
 
@@ -42,8 +42,7 @@ function HomePage() {
   const [itemsPerPage, setItemsPerPage] = useState(5);
 
   const handleClick = (event) => {
-    setCurrentPage(Number(event.target.id));
-    console.log("eventtaget", event.target.id);
+    setCurrentPage(parseInt(event.target.id));
   };
 
   const pages = [];

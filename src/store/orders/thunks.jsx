@@ -23,6 +23,7 @@ export function postNewOrder(newOrder) {
         userId: newOrder.userId,
         totalToPay: newOrder.totalToPay,
         orderNumber: newOrder.orderNumber,
+        deliveryAddress: newOrder.deliveryAddress,
       });
       const response = postOrder.data;
       console.log("order post thunk::", response);

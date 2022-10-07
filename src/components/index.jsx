@@ -11,3 +11,4 @@ export * from "../pages/OrderPage";
 export * from "../pages/RedirectLogin";
 export * from "./StarRating";
 export * from "./ProductStarRating";
+export * from "../pages/PurchaseSucceeded";

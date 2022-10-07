@@ -11,6 +11,7 @@ import {
   Login,
   OrderPage,
   RedirectLogin,
+  PurchaseSucceeded,
 } from "./components";
 import { SigninForm } from "./components/SigninForm";
 import { bootstrapLoginState } from "./store/users/thunks";
@@ -34,6 +35,7 @@ function App() {
         <Route path="/signin" element={<SigninForm />} />
         <Route path="/order" element={<OrderPage />} />
         <Route path="/redirect" element={<RedirectLogin />} />
+        <Route path="/purchaseSucceeded" element={<PurchaseSucceeded />} />
       </Routes>
     </div>
   );
