@@ -9,3 +9,11 @@
   /* flex-wrap: row; */
 }
 /* Using Float in list. Using column-count in list. */
+p,
+label {
+  font: 1rem "Fira Sans", sans-serif;
+}
+
+input {
+  margin: 0.4rem;
+}

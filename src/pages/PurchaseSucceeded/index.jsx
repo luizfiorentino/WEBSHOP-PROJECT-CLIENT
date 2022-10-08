@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function PurchaseSucceeded() {
   return (
     <div>
@@ -14,6 +14,9 @@ function PurchaseSucceeded() {
       </p>
       <p>support@TheOnlineShop.com</p>
       <p>And we'll be happy to help you!</p>
+      <button>
+        <Link to="/">Back to the Home Page</Link>
+      </button>
     </div>
   );
 }
