@@ -8,7 +8,7 @@ import { postNewOrder } from "../../store/orders/thunks";
 import { resetShopcart } from "../../store/shopcart/slice";
 import "./styles.css";
 import { useNavigate } from "react-router-dom";
-import { GrCheckboxSelected } from "react-icons/gr";
+import { BsCheckCircle } from "react-icons/bs";
 function OrderPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -134,7 +134,7 @@ function OrderPage() {
                 </label>
                 <p>
                   <strong>
-                    {card === "" ? "No card selected" : <GrCheckboxSelected />}
+                    {card === "" ? "No card selected" : <BsCheckCircle />}
                   </strong>{" "}
                   <strong>{card} </strong>selected
                 </p>

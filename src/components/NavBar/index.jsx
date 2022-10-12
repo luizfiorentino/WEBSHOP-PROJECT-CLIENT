@@ -39,35 +39,35 @@ function NavBar() {
 
   return (
     <div className="navbar-container">
-      {/* <p>navbar container</p> */}
       <div className="navbar-left-side">
-        {/* <p>navbar left side</p> */}
         <div className="left-inner">
-          {/* <p>leftbar inner</p> */}
           <div className="logo">
-            <span className="logo-online">Online</span>
+            Online
             <span className="logo-shop">Shop</span>
           </div>
           <div className="navbar-links">
-            <NavLink
-              end
-              to="/"
-              style={({ isActive }) =>
-                isActive ? { color: "white" } : undefined
-              }
-            >
-              Home Page
-            </NavLink>{" "}
-            {" ::::: "}{" "}
-            <NavLink
-              to="/about"
-              style={({ isActive }) =>
-                isActive ? { color: "white" } : undefined
-              }
-            >
-              About
-            </NavLink>{" "}
-            {" ::::: "}{" "}
+            <div className="inner-link">
+              <NavLink
+                end
+                to="/"
+                style={({ isActive }) =>
+                  isActive ? { color: "white" } : undefined
+                }
+              >
+                Home Page
+              </NavLink>
+            </div>
+            <div className="inner-link">
+              <NavLink
+                to="/about"
+                style={({ isActive }) =>
+                  isActive ? { color: "white" } : undefined
+                }
+              >
+                About
+              </NavLink>
+            </div>
+
             <NavLink
               to="/products/:id"
               style={({ isActive }) =>
@@ -80,21 +80,22 @@ function NavBar() {
         </div>
 
         <div className="right-inner">
-          {/* <p>right inner</p> */}
-          <input
-            type="text"
-            placeholder="Search..."
-            value={item}
-            onChange={(e) => {
-              setItem(e.target.value);
-            }}
-          ></input>
+          <div className="search-bar">
+            <input
+              type="text"
+              placeholder="Search..."
+              value={item}
+              onChange={(e) => {
+                setItem(e.target.value);
+              }}
+            ></input>
+          </div>{" "}
           <button>
             <FiSearch />
           </button>
         </div>
         <div className="welcome-message">
-          <p>{userName ? `Welcome, ${userName}!` : "You're not logged"}</p>
+          <p>{userName ? `Welcome, ${userName} !` : "You're not logged"}</p>
         </div>
       </div>
       <div className="navbar-right-side">

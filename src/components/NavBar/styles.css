@@ -1,8 +1,13 @@
+a {
+  text-decoration: none;
+}
+
 .navbar-container {
   width: 100%;
   height: 60px;
   background-color: olive;
   display: flex;
+  flex-direction: column;
   align-items: center;
   /* justify-content: center; */
 
@@ -15,7 +20,35 @@
   }
 }
 
-.logo-online {
+.navbar-left-side {
+  margin-left: auto;
+  margin-right: auto;
+  /* background-color: pink; */
+  min-height: 80%; /* consider removing after*/
+  /* min-width: 70%;
+  max-width: 75%; */
+  flex-grow: 1;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-inner {
+  min-width: 40%;
+  height: 80%;
+  padding: 20px;
+  /* background-color: olivedrab; */
+  margin-right: 2rem;
+  display: flex;
+
+  align-items: center;
+  justify-content: space-around;
+  /* border-radius: 999rem; */
+}
+
+.logo {
+  width: 20%;
+  margin-right: 60px;
   color: chartreuse;
   font-style: italic;
   font-size: x-large;
@@ -23,46 +56,22 @@
 .logo-shop {
   color: white;
   font-weight: 700;
+  font-style: normal;
   font-size: x-large;
-}
-.navbar-left-side {
-  margin-left: auto;
-  margin-right: auto;
-  /* background-color: pink; */
-  min-height: 80%; /* consider removing after*/
-  min-width: 70%;
-  max-width: 75%;
-  flex-grow: 1;
-  align-items: center;
-  justify-content: space-between;
-  display: flex;
 }
 
 .navbar-links {
+  /* margin: 20px; */
   font-family: "Cookie";
   font-size: x-large;
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
+  align-items: center;
 }
 
-.left-inner {
-  min-width: 40%;
-  height: 80%;
-  /* background-color: olivedrab; */
-  margin-right: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  /* border-radius: 999rem; */
-}
-
-.right-inner {
-  min-width: 30%;
-  height: 80%;
-  /* background-color: purple; */
-  margin-right: 2rem;
-  display: flex;
-  align-items: center;
+.inner-link {
+  margin-right: 10px;
 }
 
 .navbar-right-side {
@@ -75,4 +84,29 @@
   align-items: center;
   justify-content: space-around;
   color: purple;
+}
+
+.welcome-message {
+  margin-right: 20px;
+
+  color: white;
+}
+
+/* .client {
+  color: white;
+} */
+
+.right-inner {
+  min-width: 30%;
+  height: 80%;
+  /* background-color: purple; */
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  width: 70%;
+  border-radius: 999rem;
+  background: olivedrab;
 }
