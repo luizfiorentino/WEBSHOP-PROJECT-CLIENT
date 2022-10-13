@@ -67,15 +67,16 @@ function NavBar() {
                 About
               </NavLink>
             </div>
-
-            <NavLink
-              to="/products/:id"
-              style={({ isActive }) =>
-                isActive ? { color: "white" } : undefined
-              }
-            >
-              Details
-            </NavLink>
+            <div className="inner-link">
+              <NavLink
+                to="/products/:id"
+                style={({ isActive }) =>
+                  isActive ? { color: "white" } : undefined
+                }
+              >
+                Details
+              </NavLink>
+            </div>
           </div>
         </div>
 
@@ -90,37 +91,47 @@ function NavBar() {
               }}
             ></input>
           </div>{" "}
-          <button>
+          <button className="search-button">
             <FiSearch />
           </button>
         </div>
-        <div className="welcome-message">
-          <p>{userName ? `Welcome, ${userName} !` : "You're not logged"}</p>
-        </div>
       </div>
       <div className="navbar-right-side">
-        {/* <p>navbar right side</p> */}
-        <h2>
-          {!token ? (
-            <Link to="/login">
-              <FiUser />
-            </Link>
-          ) : (
-            <Link>
-              <HiOutlineLogout onClick={() => dispatch(logout())} />
-            </Link>
-          )}
-          {token ? (
-            <Link to="/shopcart">
-              <BiCartAlt />
-            </Link>
-          ) : (
-            <Link to="/redirect">
-              <BiCartAlt />
-            </Link>
-          )}{" "}
-          <BiHeart />
-        </h2>
+        <div className="welcome-message">
+          <p className="user-name">
+            {userName ? (
+              <span className="user-logged-in">
+                Welcome,{" "}
+                <span className="user-name-highlighted">{userName} !</span>
+              </span>
+            ) : (
+              <span className="user-looged-out">You're not logged in</span>
+            )}
+          </p>
+        </div>
+        <div className="right-icons">
+          <h2>
+            {!token ? (
+              <Link className="link-icon" to="/login">
+                <FiUser />
+              </Link>
+            ) : (
+              <Link className="link-icon">
+                <HiOutlineLogout onClick={() => dispatch(logout())} />
+              </Link>
+            )}
+            {token ? (
+              <Link className="link-icon-middle" to="/shopcart">
+                <BiCartAlt />
+              </Link>
+            ) : (
+              <Link className="link-icon-middle" to="/redirect">
+                <BiCartAlt />
+              </Link>
+            )}{" "}
+            <BiHeart className="link-icon" />
+          </h2>
+        </div>
       </div>
     </div>
   );
