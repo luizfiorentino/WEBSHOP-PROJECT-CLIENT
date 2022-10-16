@@ -39,7 +39,7 @@ function HomePage() {
   console.log("from HP, search state", searchState);
   const [category, setCategory] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage, setItemsPerPage] = useState(5);
+  const [itemsPerPage, setItemsPerPage] = useState(4);
 
   const handleClick = (event) => {
     setCurrentPage(parseInt(event.target.id));
@@ -127,12 +127,13 @@ function HomePage() {
   };
 
   return (
-    <div>
-      <button>
-        <Link to="/shopcart">Shopcart</Link>
-      </button>
-      <h2>Welcome to onlineShop homepage!</h2>
-      {/* {categories.map((category) => {
+    <div className="main-container">
+      <div className="home-page-main">
+        <div className="hero-banner">
+          <h1>Welcome to OnlineShop Homepage!</h1>
+        </div>
+
+        {/* {categories.map((category) => {
         return (
           <label>
             <input key={category.id} type="checkbox" value={category} />
@@ -140,40 +141,52 @@ function HomePage() {
           </label>
         );
       })} */}
-      <h3>Choose a category</h3>
-      <select value={category} onChange={(e) => setCategory(e.target.value)}>
-        <option value="all">All products</option>
-        {categories.map((category) => {
-          return (
-            <option key={category.id} value={category.title}>
-              {category.title}
-            </option>
-          );
-        })}
-      </select>
-      <ul className="pageNumbers">
-        {category === "all" ? displayPageNumbers : null}
-      </ul>
-
-      <ul>
-        {displayProducts() ? (
-          displayProducts()?.map((product) => (
-            <ProductCard
-              key={product.id}
-              id={product.id}
-              title={product.title}
-              category={product.category.title}
-              // categoryId={product.categoryId}
-              image={product.mainImage}
-              price={product.price}
-              rating={product.rating}
-              // description={product.description}
-            />
-          ))
-        ) : (
-          <p>Loading</p>
-        )}
-      </ul>
+        <h3 className="category-call">Choose a category</h3>
+        <select value={category} onChange={(e) => setCategory(e.target.value)}>
+          <option value="all">All products</option>
+          {categories.map((category) => {
+            return (
+              <option key={category.id} value={category.title}>
+                {category.title}
+              </option>
+            );
+          })}
+        </select>
+        <ul className="pageNumbers">
+          {category === "all" ? displayPageNumbers : null}
+        </ul>
+        <div>
+          <ul className="product-card">
+            {displayProducts() ? (
+              displayProducts()?.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  id={product.id}
+                  title={product.title}
+                  category={product.category.title}
+                  // categoryId={product.categoryId}
+                  image={product.mainImage}
+                  price={product.price}
+                  rating={product.rating}
+                  // description={product.description}
+                />
+              ))
+            ) : (
+              <p>Loading</p>
+            )}
+          </ul>
+        </div>
+      </div>
+      <div className="footer">
+        {/* <div className="footer-left-side"></div>
+        <div className="footer-right-side"> */}
+        <p className="costumer-call">
+          We're happy to help or get any suggestion from you! Please send an
+          email to our costumer's center:{" "}
+          <span className="costumer-center-email">support@online-shop.com</span>{" "}
+        </p>
+        {/* </div> */}
+      </div>
     </div>
   );
 }

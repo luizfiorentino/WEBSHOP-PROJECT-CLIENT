@@ -1,10 +1,115 @@
-.pageNumbers {
+/* .main-container {
   justify-content: center;
+} */
+
+.home-page-main {
+  /* justify-items: center; */
+
+  justify-content: center;
+
+  /* background-image: url(https://media.macphun.com/img/uploads/customer/blog/504/15360610675b8e6e8b52bd36.49629027.jpg?q=85&w=1680); */
+  background-image: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/many-colorful-jellyfish-on-the-dark-sea-royalty-free-image-1572034000.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: chartreuse;
+}
+
+.hero-banner {
+  height: 150px;
+  background-color: #0c0c8a;
+  font-family: "Aref Ruqaa Ink";
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.category-call {
+  /* margin: auto; */
+  padding: 1rem;
+  background-color: rgba(231, 89, 89, 0.6);
+  /* color: #ff00ff; */
+  color: chartreuse;
+  font-size: 24px;
+}
+
+.footer {
+  height: 150px;
+  background-color: #0c0c8a;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+@media (min-width: 77rem) {
+  .footer {
+    flex-direction: row;
+  }
+}
+
+/* .footer-left-side {
+  height: 40%;
+  width: 40%;
+} */
+.footer-right-side {
+  /* background-color: white; */
+
+  /* height: 40%;
+  width: 40%; */
+
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media (min-width: 77rem) {
+  .footer-right-side {
+    flex-direction: row;
+  }
+}
+
+.costumer-call {
+  font-family: "Aref Ruqaa Ink";
+}
+.costumer-center-email {
+  font-family: "Aref Ruqaa Ink";
+  font-style: italic;
+  font-weight: bold;
+  color: chartreuse;
+}
+
+.product-card {
+  /* width: 90%; */
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* @media (min-width: 60rem) {
+  .product-card {
+    flex-direction: row;
+  }
+} */
+
+.pageNumbers {
+  margin-top: 2rem;
+  margin-right: 1cm;
   list-style: none;
   display: flex;
+  justify-content: center;
 }
 
 .pageNumbers li {
+  color: chartreuse;
+  font-weight: bold;
+  font-family: " Aref Ruqaa Ink ";
   padding: 10px;
   border: 1px solid white;
   cursor: pointer;

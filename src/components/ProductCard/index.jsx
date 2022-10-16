@@ -30,7 +30,7 @@ export default function ProductCard(props) {
       <h3>{props.title}</h3>
       {/* <h4>Rating: {props.rating}</h4> */}
       <ProductStarRating key={props.id} rating={props.rating} />
-      <img src={props.image} style={{ width: 250 }} />
+      <img className="product-card-image" src={props.image} alt={props.title} />
       <h4>$ {props.price}</h4>
       {token ? <button onClick={addProduct}>Add to shopcart</button> : null}
       <button>
