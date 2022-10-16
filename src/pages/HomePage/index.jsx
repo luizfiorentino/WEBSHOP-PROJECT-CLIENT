@@ -130,7 +130,7 @@ function HomePage() {
     <div className="main-container">
       <div className="home-page-main">
         <div className="hero-banner">
-          <h1>Welcome to OnlineShop Homepage!</h1>
+          <h1>Welcome to the OnlineShop Homepage!</h1>
         </div>
 
         {/* {categories.map((category) => {
