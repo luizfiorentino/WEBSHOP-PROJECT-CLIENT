@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { FiUser, FiSearch } from "react-icons/fi";
 import { BiCartAlt, BiHeart, BiLogOut } from "react-icons/bi";
 import { HiOutlineLogout } from "react-icons/hi";
+import { BsSuitHeartFill } from "react-icons/bs";
 import { useState } from "react";
 import { searchProduct } from "../../store/products/slice";
 import { useSelector } from "react-redux";
@@ -25,6 +26,7 @@ function NavBar() {
   console.log("useEmailSelector::", userEmail);
   console.log("from Navbar::", userData);
   const [item, setItem] = useState("");
+  const [heart, setHeart] = useState("empty");
   const token = useSelector(selectToken);
   //console.log("accesstoken::", token);
   //console.log("searchTerm:", searchTerm);
@@ -39,6 +41,11 @@ function NavBar() {
 
   const searchClear = () => {
     setItem("");
+  };
+
+  const toggleHeart = () => {
+    heart === "empty" ? setHeart("filled") : setHeart("empty");
+    console.log("heart is:::", heart);
   };
 
   return (
@@ -140,7 +147,14 @@ function NavBar() {
                 <BiCartAlt />
               </Link>
             )}{" "}
-            <BiHeart className="link-icon" />
+            <Link className="heart-div" onClick={toggleHeart}>
+              {" "}
+              {heart === "empty" ? (
+                <BiHeart className="link-icon" />
+              ) : (
+                <BsSuitHeartFill className="filled-heart" />
+              )}
+            </Link>
           </h2>
         </div>
       </div>

@@ -20,6 +20,10 @@ a {
   }
 }
 
+.heart-button {
+  text-decoration: none;
+}
+
 .navbar-left-side {
   margin-left: auto;
   margin-right: auto;
@@ -101,9 +105,9 @@ a {
   }
 }
 
-.inner-link {
+/* .inner-link {
   margin-right: 10px;
-}
+} */
 
 .right-inner {
   min-width: 30%;
@@ -149,8 +153,8 @@ a {
 .navbar-right-side {
   margin-right: 20px;
   width: 50%;
-  display: flex;
 
+  display: flex;
   flex-direction: column;
   justify-items: right;
   align-items: center;
@@ -237,4 +241,11 @@ a {
 
     flex-direction: row;
   }
+}
+
+.heart-div {
+}
+
+.filled-heart {
+  color: chartreuse;
 }
