@@ -1,6 +1,7 @@
 .product-card-main {
   max-width: 15rem;
   margin: 1rem;
+
   padding: 2rem;
   border: solid 3px rgb(17, 252, 252);
   /* background: rgba(140, 116, 247, 0.7); */
@@ -15,4 +16,14 @@
 .product-card-image {
   max-width: 250px;
   max-height: 250px;
+}
+
+.product-card-button {
+  color: blue;
+  margin: 3px;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-content: center;
 }

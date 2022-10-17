@@ -81,16 +81,20 @@
 }
 
 .pageNumbers {
+  background: rgba(255, 255, 255, 0.8);
   margin-top: 2rem;
-  margin-right: 1cm;
   list-style: none;
+
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  align-content: center;
 }
 
 .pageNumbers li {
-  color: chartreuse;
-  font-weight: bold;
+  color: blue;
+  font-weight: bolder;
+  font-size: 22px;
   font-family: " Aref Ruqaa Ink ";
   padding: 10px;
   border: 1px solid white;

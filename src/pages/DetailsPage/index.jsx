@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { productDetailsThunk } from "../../store/thunks";
@@ -16,6 +16,7 @@ import "./styles.css";
 
 function DetailsPage() {
   const dispatch = useDispatch();
+  const [text, setText] = useState("Rate this Product:");
   const productId = useParams().id;
   const productDetails = useSelector(selectProductDetails);
   const cartItems = useSelector(selectCartItems);
@@ -45,62 +46,92 @@ function DetailsPage() {
     dispatch(productDetailsThunk(productId));
   }, [dispatch]);
 
+  const toggleText = () => {
+    setText(<span className="product-rated">Thanks for rating!</span>);
+    console.log("text", text);
+  };
+
   return (
     <div className="product-details-main">
       <div className="details-inner"></div>
       <div className="home-page-button">
         <button className="button-inner">
-          <Link to={"/"}>Back to Home Page</Link>
+          <Link to={"/"}>Home Page</Link>
         </button>
       </div>
       <div className="product-details-call">
         <h3>Product's Details</h3>
       </div>
       <div className="rate-product-call">
-        <h4>Rate this product</h4>
+        <h4>{text}</h4>
       </div>
-      <div className="star-rating-call">
+      <div className="star-rating-call" onClick={toggleText}>
         <StarRating />
       </div>
       <div className="product-title">
         <h3>{productDetails?.title}</h3>
       </div>
-      <div className="product-category">
-        <h4>Category: {productDetails?.category.title}</h4>
-      </div>
-      <div className="product-rating">
-        <h4>Rating: {productDetails?.rating}</h4>
-      </div>
 
-      <h3>$ {productDetails?.price}</h3>
+      <h3 className="product-price">
+        {" "}
+        Price:{" "}
+        <span className="emphasis-description">$ {productDetails?.price}</span>
+      </h3>
       <div className="product-image">
         <img src={productDetails?.mainImage} />
       </div>
       <div className="product-description">
         <h4>{productDetails?.description}</h4>
       </div>
+      <div className="product-category">
+        <li>
+          Category:{" "}
+          <span className="emphasis-description">
+            {productDetails?.category.title}
+          </span>
+        </li>
+      </div>
+      <div className="product-rating">
+        <li>
+          Rating:{" "}
+          <span className="emphasis-description">{productDetails?.rating}</span>
+        </li>
+      </div>
 
-      {token ? <button onClick={addProduct}>Add to shopcart</button> : null}
+      {token ? (
+        <div className="home-page-button">
+          <button className="button-inner" onClick={addProduct}>
+            Add to shopcart
+          </button>
+        </div>
+      ) : // <button className="shop-cart-button" onClick={addProduct}>
+      //   Add to shopcart
+      // </button>
+      null}
+      <div className="review-area">
+        {!token ? (
+          <h4>Please log in to post your review</h4>
+        ) : (
+          <CommentForm key={productDetails?.id} id={productDetails?.id} />
+        )}
+        <h4>See what costumers think about this product:</h4>
+        {commentsForThisProduct.length === 0 ? (
+          <h5>There are currently no reviews for this product</h5>
+        ) : (
+          <p>Total reviews: {commentsForThisProduct.length}</p>
+        )}
+        <ul>
+          {comments
+            ? commentsForThisProduct.map((comment) => (
+                <li>{comment.comment}</li>
+              ))
+            : null}
+        </ul>
+      </div>
 
-      {!token ? (
-        <h4>Please log in to post your review</h4>
-      ) : (
-        <CommentForm key={productDetails?.id} id={productDetails?.id} />
-      )}
-      <h4>See what costumers think of our products:</h4>
-      {commentsForThisProduct.length === 0 ? (
-        <h5>There are currently no reviews for this product</h5>
-      ) : (
-        <p>Total reviews: {commentsForThisProduct.length}</p>
-      )}
-      <ul>
-        {comments
-          ? commentsForThisProduct.map((comment) => <li>{comment.comment}</li>)
-          : null}
-      </ul>
       <div className="home-page-button">
         <button className="button-inner">
-          <Link to={"/"}>Back to Home Page</Link>
+          <Link to={"/"}>Home Page</Link>
         </button>
       </div>
       <div className="footer">

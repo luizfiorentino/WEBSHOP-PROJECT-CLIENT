@@ -132,7 +132,6 @@ function HomePage() {
         <div className="hero-banner">
           <h1>Welcome to the OnlineShop Homepage!</h1>
         </div>
-
         {/* {categories.map((category) => {
         return (
           <label>
@@ -151,7 +150,7 @@ function HomePage() {
               </option>
             );
           })}
-        </select>
+        </select>{" "}
         <ul className="pageNumbers">
           {category === "all" ? displayPageNumbers : null}
         </ul>

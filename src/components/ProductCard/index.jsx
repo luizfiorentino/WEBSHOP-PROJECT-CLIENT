@@ -31,11 +31,18 @@ export default function ProductCard(props) {
       {/* <h4>Rating: {props.rating}</h4> */}
       <ProductStarRating key={props.id} rating={props.rating} />
       <img className="product-card-image" src={props.image} alt={props.title} />
-      <h4>$ {props.price}</h4>
-      {token ? <button onClick={addProduct}>Add to shopcart</button> : null}
-      <button>
-        <Link to={`/products/${props.id}`}>More</Link>
-      </button>
+      <h4>$ {props.price}</h4>{" "}
+      <div className="product-card-button">
+        {token ? (
+          <button className="product-card-button" onClick={addProduct}>
+            Add to shopcart
+          </button>
+        ) : null}
+        <button className="product-card-button">
+          {" "}
+          <Link to={`/products/${props.id}`}>More</Link>
+        </button>
+      </div>
     </div>
   );
 }

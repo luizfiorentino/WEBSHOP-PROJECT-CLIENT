@@ -37,14 +37,21 @@ function NavBar() {
 
   console.log("const names::", userName);
 
+  const searchClear = () => {
+    setItem("");
+  };
+
   return (
     <div className="navbar-container">
       <div className="navbar-left-side">
         <div className="left-inner">
-          <div className="logo">
-            Online
-            <span className="logo-shop">Shop</span>
-          </div>
+          <Link to="/">
+            <div className="logo">
+              Online
+              <span className="logo-shop">Shop</span>
+            </div>
+          </Link>
+
           <div className="navbar-links">
             <div className="inner-link">
               <NavLink
@@ -91,9 +98,13 @@ function NavBar() {
               }}
             ></input>
           </div>{" "}
-          <button className="search-button">
-            <FiSearch />
-          </button>
+          {!item ? (
+            <button className="search-button">
+              <FiSearch />
+            </button>
+          ) : (
+            <button onClick={searchClear}>Clear</button>
+          )}
         </div>
       </div>
       <div className="navbar-right-side">

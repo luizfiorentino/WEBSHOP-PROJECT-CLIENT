@@ -1,10 +1,11 @@
 a {
-  color: white;
+  color: blueviolet;
 }
 
 .product-details-main {
-  margin: 0.5rem;
+  /* margin: 0.5rem; */
   max-width: 50rem;
+
   background-color: orange;
   border: 0.7rem solid black;
   display: flex;
@@ -21,7 +22,7 @@ a {
 .button-inner {
   border-radius: 999rem;
   padding: 0.7em;
-  font-family: "Aref Ruqaa Ink";
+  /* font-family: "Aref Ruqaa Ink"; */
   font-size: 18px;
   font-weight: bolder;
 
@@ -29,29 +30,81 @@ a {
 }
 
 .product-details-call {
+  color: purple;
+
+  padding: 0 3rem;
+  background-color: rgba(255, 255, 255, 0.1);
   font-family: "Cookie";
-  font-size: 20px;
-  margin-bottom: 0;
+  font-size: 30px;
+  justify-content: center;
+  margin: -2.5rem 0;
 }
 
 .rate-product-call {
   margin-top: 0;
 }
 
+.star-rating-call {
+  padding: 0.5rem 1.2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.product-rated {
+  color: blue;
+}
+
 .product-title {
-  max-width: 30rem;
+  /* max-width: 30rem; */
+  color: blue;
+
+  margin-top: 1rem;
+  width: 81%;
+  border: 2px solid black;
+  padding: 1rem;
 }
 
 .product-category {
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+.product-description {
+  color: blue;
+  margin-top: 1rem;
+  width: 81%;
+  border: 2px solid black;
+  padding: 1rem;
+  text-align: justify;
+}
+
+.product-rating {
   margin: 0;
+  font-weight: bold;
+}
+
+.shop-cart-button {
+  margin: 2rem;
+}
+
+.product-price {
+  font-size: 18px;
+  font-family: "Aref Ruqaa Ink";
 }
 
 /* .product-image {
-  padding: 5rem;
-  background: white;
+  background-color: white;
 } */
+.emphasis-description {
+  font-family: "Aref Ruqaa Ink";
+  font-size: 20px;
+  color: blue;
+}
 
-.product-description {
-  max-width: 30rem;
-  text-align: justify;
+.review-area {
+  margin: 0;
+}
+
+.footer {
+  width: 101%;
 }
