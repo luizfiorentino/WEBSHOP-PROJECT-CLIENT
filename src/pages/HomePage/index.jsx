@@ -141,7 +141,7 @@ function HomePage() {
           </label>
         );
       })} */}
-        <h3 className="category-call">Choose a category</h3>
+        <h3 className="category-call">:: Choose a category ::</h3>
         <select value={category} onChange={(e) => setCategory(e.target.value)}>
           <option value="all">All products</option>
           {categories.map((category) => {

@@ -1,13 +1,6 @@
-/* .main-container {
-  justify-content: center;
-} */
-
 .home-page-main {
-  /* justify-items: center; */
-
-  justify-content: center;
-
   /* background-image: url(https://media.macphun.com/img/uploads/customer/blog/504/15360610675b8e6e8b52bd36.49629027.jpg?q=85&w=1680); */
+  justify-content: center;
   background-image: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/many-colorful-jellyfish-on-the-dark-sea-royalty-free-image-1572034000.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -30,10 +23,12 @@
   /* background-image: url(https://i.etsystatic.com/24213509/r/il/e15113/2720054794/il_570xN.2720054794_5tzz.jpg); */
   /* background-image: url(https://www.aptouring.com/-/media/apt-responsive-website/north-america/hero-panel-12-5/alaska-12-5/hc-a-causa-alaska-northern-lights-599096567-s-12-5.webp?useCustomFunctions=1&rw=1299&w=1299&h=541&cropX=0&cropY=0&format=webp); */
   margin-top: -2rem;
+  padding: 0.5rem;
   background-image: url(https://png.pngtree.com/element_our/20190530/ourlarge/pngtree-a-group-of-flying-birds-image_1257449.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,45 +36,47 @@
 }
 
 .main-text-inner {
-  margin-bottom: 0;
+  margin: 0;
+  padding: 1rem;
   width: 40rem;
   font-family: "Cookie";
   font-size: 28px;
   color: blue;
-  background: rgba(255, 255, 82559, 0.6);
-
+  background: rgba(255, 255, 82559, 0.7);
+  text-align: left;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
 }
 
 .main-text-list {
-  margin-bottom: 2rem;
-  width: 40rem;
+  margin: 0 0 1rem;
+  width: 37rem;
+  padding-bottom: 0.5rem;
+  padding-left: 5rem;
   font-family: "Cookie";
   font-size: 28px;
   color: blue;
-  background: rgba(255, 255, 82559, 0.6);
-
+  background: rgba(255, 255, 82559, 0.7);
+  text-align: left;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
+  align-content: left;
 }
 .mission-call {
-  /* margin: 0; */
   padding: 1rem;
-
   background-color: rgba(231, 89, 89, 0.6);
   /* color: #ff00ff; */
   color: chartreuse;
   font-size: 24px;
+}
 
-  /* display: flex;
-  justify-content: center;
-  align-content: center; */
-  /* height: 4rem; */
+.email-text {
+  color: green;
+  font-weight: bold;
+  text-align: center;
 }
 
 .footer {
@@ -99,16 +96,7 @@
   }
 }
 
-/* .footer-left-side {
-    height: 40%;
-    width: 40%;
-  } */
 .footer-right-side {
-  /* background-color: white; */
-
-  /* height: 40%;
-    width: 40%; */
-
   color: white;
   display: flex;
   justify-content: center;
@@ -123,47 +111,4 @@
 
 .costumer-call {
   font-family: "Aref Ruqaa Ink";
-}
-.costumer-center-email {
-  font-family: "Aref Ruqaa Ink";
-  font-style: italic;
-  font-weight: bold;
-  color: chartreuse;
-}
-
-.product-card {
-  /* width: 90%; */
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* @media (min-width: 60rem) {
-    .product-card {
-      flex-direction: row;
-    }
-  } */
-
-.pageNumbers {
-  margin-top: 2rem;
-  margin-right: 1cm;
-  list-style: none;
-  display: flex;
-  justify-content: center;
-}
-
-.pageNumbers li {
-  color: chartreuse;
-  font-weight: bold;
-  font-family: " Aref Ruqaa Ink ";
-  padding: 10px;
-  border: 1px solid white;
-  cursor: pointer;
-}
-
-.pageNumbers li.active {
-  background-color: white;
-  color: black;
 }

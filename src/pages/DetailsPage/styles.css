@@ -1,0 +1,57 @@
+a {
+  color: white;
+}
+
+.product-details-main {
+  margin: 0.5rem;
+  max-width: 50rem;
+  background-color: orange;
+  border: 0.7rem solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-page-button {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.button-inner {
+  border-radius: 999rem;
+  padding: 0.7em;
+  font-family: "Aref Ruqaa Ink";
+  font-size: 18px;
+  font-weight: bolder;
+
+  background-color: chartreuse;
+}
+
+.product-details-call {
+  font-family: "Cookie";
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.rate-product-call {
+  margin-top: 0;
+}
+
+.product-title {
+  max-width: 30rem;
+}
+
+.product-category {
+  margin: 0;
+}
+
+/* .product-image {
+  padding: 5rem;
+  background: white;
+} */
+
+.product-description {
+  max-width: 30rem;
+  text-align: justify;
+}

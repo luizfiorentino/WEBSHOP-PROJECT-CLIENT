@@ -28,8 +28,9 @@ function AboutPage() {
           Our team values a lot your opinion regarding both the buying
           experience and the products from our shop. Please feel welcome to
           leave a review in the product's details page, or send us an e-mail
-          with suggestions to: <span>suggestions@online-shop.com</span>. We'll
-          be happy to hearing from you and improve our services!
+          with suggestions to:{" "}
+          <span className="email-text">contact@online-shop.com</span>
+          We'll be happy to hearing from you and improve our services!
         </p>
         <p className="main-text-inner">
           Check out some of the benefits of buying with the OnlineShop:

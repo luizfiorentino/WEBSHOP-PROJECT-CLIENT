@@ -12,6 +12,7 @@ import { CommentForm } from "../../components/CommentForm/index";
 import { selectAllComments } from "../../store/comments/selectors";
 import { selectToken } from "../../store/users/selectors";
 import { StarRating } from "../../components/StarRating";
+import "./styles.css";
 
 function DetailsPage() {
   const dispatch = useDispatch();
@@ -45,25 +46,42 @@ function DetailsPage() {
   }, [dispatch]);
 
   return (
-    <div>
-      <button>
-        <Link to={"/"}>Back to Home Page</Link>
-      </button>
-      <h3>Product's Details</h3>
-      <h4>Rate this product</h4>
-      <StarRating />
+    <div className="product-details-main">
+      <div className="details-inner"></div>
+      <div className="home-page-button">
+        <button className="button-inner">
+          <Link to={"/"}>Back to Home Page</Link>
+        </button>
+      </div>
+      <div className="product-details-call">
+        <h3>Product's Details</h3>
+      </div>
+      <div className="rate-product-call">
+        <h4>Rate this product</h4>
+      </div>
+      <div className="star-rating-call">
+        <StarRating />
+      </div>
+      <div className="product-title">
+        <h3>{productDetails?.title}</h3>
+      </div>
+      <div className="product-category">
+        <h4>Category: {productDetails?.category.title}</h4>
+      </div>
+      <div className="product-rating">
+        <h4>Rating: {productDetails?.rating}</h4>
+      </div>
 
-      <h3>{productDetails?.title}</h3>
-      <h4>Category: {productDetails?.category.title}</h4>
-      <h4>Rating: {productDetails?.rating}</h4>
       <h3>$ {productDetails?.price}</h3>
-      <img src={productDetails?.mainImage} />
-      <h4>{productDetails?.description}</h4>
+      <div className="product-image">
+        <img src={productDetails?.mainImage} />
+      </div>
+      <div className="product-description">
+        <h4>{productDetails?.description}</h4>
+      </div>
+
       {token ? <button onClick={addProduct}>Add to shopcart</button> : null}
 
-      <button>
-        <Link to={"/"}>Back to Home Page</Link>
-      </button>
       {!token ? (
         <h4>Please log in to post your review</h4>
       ) : (
@@ -80,6 +98,21 @@ function DetailsPage() {
           ? commentsForThisProduct.map((comment) => <li>{comment.comment}</li>)
           : null}
       </ul>
+      <div className="home-page-button">
+        <button className="button-inner">
+          <Link to={"/"}>Back to Home Page</Link>
+        </button>
+      </div>
+      <div className="footer">
+        {/* <div className="footer-left-side"></div>
+        <div className="footer-right-side"> */}
+        <p className="costumer-call">
+          We're happy to help or get any suggestion from you! Please send an
+          email to our costumer's center:{" "}
+          <span className="costumer-center-email">support@online-shop.com</span>{" "}
+        </p>
+        {/* </div> */}
+      </div>
     </div>
   );
 }

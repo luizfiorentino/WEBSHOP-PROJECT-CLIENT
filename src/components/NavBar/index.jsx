@@ -51,7 +51,7 @@ function NavBar() {
                 end
                 to="/"
                 style={({ isActive }) =>
-                  isActive ? { color: "white" } : undefined
+                  isActive ? { color: "white" } : { color: "rgb(98, 0, 128)" }
                 }
               >
                 Home Page
@@ -61,7 +61,7 @@ function NavBar() {
               <NavLink
                 to="/about"
                 style={({ isActive }) =>
-                  isActive ? { color: "white" } : undefined
+                  isActive ? { color: "white" } : { color: "rgb(98, 0, 128)" }
                 }
               >
                 About
@@ -71,7 +71,7 @@ function NavBar() {
               <NavLink
                 to="/products/:id"
                 style={({ isActive }) =>
-                  isActive ? { color: "white" } : undefined
+                  isActive ? { color: "white" } : { color: "rgb(98, 0, 128)" }
                 }
               >
                 Details
