@@ -35,13 +35,18 @@ function ShopCart() {
           <p>Loading</p>
         )}
       </ul>
-      <h3>Total: $ {sumPrices}</h3>
-
-      <p>
-        <button>
-          <Link to="/order">Place an order</Link>
-        </button>
-      </p>
+      {cartInfo.length === 0 ? (
+        <h3>Your shopcart is currently empty</h3>
+      ) : (
+        <h3>Total: $ {sumPrices}</h3>
+      )}
+      {cartInfo.length === 0 ? undefined : (
+        <p>
+          <button>
+            <Link to="/order">Place an order</Link>
+          </button>
+        </p>
+      )}
     </div>
   );
 }

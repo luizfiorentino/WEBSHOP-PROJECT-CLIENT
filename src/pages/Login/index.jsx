@@ -34,7 +34,7 @@ function Login() {
   }
 
   return (
-    <div className="main-container">
+    <div className="login-page-main-container">
       <h3>Please enter your email and password to login</h3>
       <form onSubmit={handleSubmit}>
         <div className="input-fields">
