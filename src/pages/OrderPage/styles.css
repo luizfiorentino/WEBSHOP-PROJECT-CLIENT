@@ -77,3 +77,10 @@ input {
   margin-top: 1rem;
   margin-bottom: -1rem;
 }
+
+.mandatory-fields-call {
+  margin-left: -1rem;
+  color: blue;
+  font-style: italic;
+  font-size: 14px;
+}

@@ -12,7 +12,7 @@ function PurchaseSucceeded() {
         In case of any question or need to communication, please contact our
         online helpline:
       </p>
-      <p>support@TheOnlineShop.com</p>
+      <p>support@online-shop.com</p>
       <p>And we'll be happy to help you!</p>
       <button>
         <Link to="/">Back to the Home Page</Link>

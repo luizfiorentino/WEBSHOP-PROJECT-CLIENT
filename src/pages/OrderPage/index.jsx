@@ -12,14 +12,16 @@ import { BsCheckCircle } from "react-icons/bs";
 function OrderPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [card, setCard] = useState("");
+  const [cardNumber, setCardNumber] = useState("");
+  const [expDate, setExpDate] = useState("");
+  const [confDigit, setConfDigit] = useState("");
   const [address, setAddress] = useState("");
   const [houseNumber, setHouseNumber] = useState("");
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
   const [zipCode, setZipCode] = useState("");
   const [observation, setObservation] = useState("");
-  const [cardInfo, setCardInfo] = useState("");
+  const [card, setCard] = useState("No card");
 
   const cartItems = useSelector(selectCartItems);
   const totalAmount = useSelector(selectTotalPurchaseAmount);
@@ -29,26 +31,41 @@ function OrderPage() {
     event.preventDefault();
     //const deliveryAddress = `${address}, ${houseNumber} - ${city} - ${country} - zip code: ${zipCode} - observation: ${observation}`;
     //console.log("deliveryAddress", deliveryAddress);
-    const newOrder = {
-      userId: 1, //hardcoded for now
-      totalToPay: totalAmount,
-      orderNumber: Math.round(Math.random() * 10000000),
-      deliveryAddress: `${address}, ${houseNumber} - ${city} - ${country} - zip code: ${zipCode} - observation: ${observation}`,
-      cardInfo: cardInfo,
-    };
-    dispatch(postNewOrder(newOrder));
-    console.log("::address", address);
-    setCardInfo("");
-    setAddress("");
-    setHouseNumber("");
-    setCity("");
-    setCountry("");
-    setZipCode("");
-    setObservation("");
-    navigate("/purchaseSucceeded");
+    if (
+      !cardNumber ||
+      !expDate ||
+      !confDigit ||
+      !address ||
+      !houseNumber ||
+      !city ||
+      !country ||
+      !zipCode
+    ) {
+      alert("All fields marked with an  *  must be filled");
+    } else {
+      const newOrder = {
+        userId: 1, //hardcoded for now
+        totalToPay: totalAmount,
+        orderNumber: Math.round(Math.random() * 10000000),
+        deliveryAddress: `${address}, ${houseNumber} - ${city} - ${country} - zip code: ${zipCode} - observation: ${observation}`,
+        cardInfo: cardNumber,
+      };
+      dispatch(postNewOrder(newOrder));
+      console.log("::address", address);
+      setCardNumber("");
+      setExpDate("");
+      setConfDigit("");
+      setAddress("");
+      setHouseNumber("");
+      setCity("");
+      setCountry("");
+      setZipCode("");
+      setObservation("");
+      navigate("/purchaseSucceeded");
+    }
   }
   const handleChange = (event) => {
-    setCard(event.target.value);
+    setCardNumber(event.target.value);
     // const target = event.target;
     // const name = target.name;
     // const value = target.value;
@@ -140,15 +157,31 @@ function OrderPage() {
             </p>
             <div className="payment-and-address-fields">
               <label className="delivery-fields">
-                Card Info
+                Card Number *
                 <input
                   type="text"
-                  value={cardInfo}
-                  onChange={(e) => setCardInfo(e.target.value)}
+                  value={cardNumber}
+                  onChange={(e) => setCardNumber(e.target.value)}
                 />
               </label>{" "}
               <label className="delivery-fields">
-                Delivery Address
+                Exp. Date (DD-MM-YYYY) *
+                <input
+                  type="text"
+                  value={expDate}
+                  onChange={(e) => setExpDate(e.target.value)}
+                />
+              </label>{" "}
+              <label className="delivery-fields">
+                Conf. Digits *
+                <input
+                  type="text"
+                  value={confDigit}
+                  onChange={(e) => setConfDigit(e.target.value)}
+                />
+              </label>{" "}
+              <label className="delivery-fields">
+                Delivery Address *
                 <input
                   type="text"
                   value={address}
@@ -156,7 +189,7 @@ function OrderPage() {
                 />
               </label>{" "}
               <label className="delivery-fields">
-                Number/ Complement
+                Number * / Complement
                 <input
                   type="text"
                   value={houseNumber}
@@ -164,7 +197,7 @@ function OrderPage() {
                 />
               </label>{" "}
               <label className="delivery-fields">
-                City
+                City *
                 <input
                   type="text"
                   value={city}
@@ -172,7 +205,7 @@ function OrderPage() {
                 />
               </label>{" "}
               <label className="delivery-fields">
-                Country
+                Country *
                 <input
                   type="text"
                   value={country}
@@ -180,7 +213,7 @@ function OrderPage() {
                 />
               </label>{" "}
               <label className="delivery-fields">
-                Zip Code
+                Zip Code *
                 <input
                   type="text"
                   value={zipCode}
@@ -195,6 +228,7 @@ function OrderPage() {
                   onChange={(e) => setObservation(e.target.value)}
                 />
               </label>{" "}
+              <p className="mandatory-fields-call">* are mandatory fields</p>
               <p>
                 <div className="submit-button">
                   {" "}
