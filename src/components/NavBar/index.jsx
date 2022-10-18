@@ -68,7 +68,7 @@ function NavBar() {
                   isActive ? { color: "white" } : { color: "rgb(98, 0, 128)" }
                 }
               >
-                Home Page
+                Home
               </NavLink>
             </div>
             <div className="inner-link">
@@ -97,6 +97,7 @@ function NavBar() {
         <div className="right-inner">
           <div className="search-bar">
             <input
+              className="input-searchbar"
               type="text"
               placeholder="Search..."
               value={item}
