@@ -28,7 +28,6 @@ export function login(email, password, navigate) {
       navigate("/");
     } catch (e) {
       console.log({ "error at login": e.message });
-      alert("email address and/ or password don't match, please try again");
     }
   };
 }

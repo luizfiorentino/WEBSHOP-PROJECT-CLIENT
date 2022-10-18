@@ -1,0 +1,31 @@
+.main-container {
+  margin: 2rem;
+  width: 40rem;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.input-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 45rem) {
+  .input-inner {
+    flex-direction: row;
+  }
+}
+
+.login-error-message {
+  color: red;
+  font-style: italic;
+}
