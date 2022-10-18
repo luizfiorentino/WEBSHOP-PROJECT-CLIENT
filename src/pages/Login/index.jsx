@@ -3,12 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../store/users/thunks";
 import { useNavigate, Link } from "react-router-dom";
 import { SigninForm } from "../../components";
+import { selectToken } from "../../store/users/selectors";
 
 function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const token = useSelector(selectToken);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -16,10 +18,14 @@ function Login() {
       email: email,
       password: password,
     };
-    dispatch(login(email, password, navigate));
+    if (!email || !password) {
+      alert("Email and password must be informed");
+    } else {
+      dispatch(login(email, password, navigate));
 
-    setEmail("");
-    setPassword("");
+      setEmail("");
+      setPassword("");
+    }
   }
 
   return (
