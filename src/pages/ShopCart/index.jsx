@@ -6,6 +6,7 @@ import { removeItem, setTotalValue } from "../../store/shopcart/slice";
 import { CartComponent } from "../../components";
 import { Link } from "react-router-dom";
 import { ShopPage } from "../OrderPage";
+import "./styles.css";
 
 function ShopCart() {
   const dispatch = useDispatch();
@@ -61,34 +62,42 @@ function ShopCart() {
 
   dispatch(setTotalValue(sumPrices));
   return (
-    <div>
-      <ul>
-        {filteredArr ? (
-          filteredArr.map((item) => {
-            return (
-              <CartComponent
-                key={item.id}
-                id={item.id}
-                title={item.title}
-                image={item.image}
-                price={item.price}
-                cartInfo={cartInfo}
-              />
-            );
-          })
+    <div className="shopcart-page-main-container">
+      <div>
+        <ul className="shopcart-items-inner">
+          {filteredArr ? (
+            filteredArr.map((item) => {
+              return (
+                <CartComponent
+                  key={item.id}
+                  id={item.id}
+                  title={item.title}
+                  image={item.image}
+                  price={item.price}
+                  cartInfo={cartInfo}
+                />
+              );
+            })
+          ) : (
+            <p>Loading</p>
+          )}
+        </ul>
+        {cartInfo.length === 0 ? (
+          <p className="purchase-summary">Your shopcart is currently empty</p>
         ) : (
-          <p>Loading</p>
+          <p className="purchase-summary">
+            Total: ${" "}
+            <span className="total-price">
+              {parseFloat(sumPrices.toFixed(2))}
+            </span>
+          </p>
         )}
-      </ul>
-      {cartInfo.length === 0 ? (
-        <h3>Your shopcart is currently empty</h3>
-      ) : (
-        <h3>Total: $ {parseFloat(sumPrices.toFixed(2))}</h3>
-      )}
+      </div>
+
       {cartInfo.length === 0 ? undefined : (
         <p>
-          <button>
-            <Link to="/order">Place an order</Link>
+          <button className="order-button">
+            <Link to="/order">Continue</Link>
           </button>
         </p>
       )}

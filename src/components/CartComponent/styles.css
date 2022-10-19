@@ -1,0 +1,38 @@
+.img-thumbnail {
+  width: 60px;
+  max-height: 60px;
+}
+
+p {
+  margin: 3px;
+
+  color: blue;
+}
+
+.title {
+  margin: 10px;
+}
+.main-container-cart-component {
+  /* width: 20rem;
+  height: 20rem; */
+
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+}
+
+.product-inner {
+  width: 12rem;
+  height: 14rem;
+  margin: 1rem;
+  border: 1px solid black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.total-items {
+  margin: 5px;
+}
