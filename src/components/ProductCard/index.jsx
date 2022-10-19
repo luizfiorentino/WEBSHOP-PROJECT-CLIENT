@@ -25,12 +25,18 @@ export default function ProductCard(props) {
     dispatch(addItem(itemObject));
   };
 
+  const itemAmount = () => {
+    cartItems.filter((item) => item.title === props.title);
+    return itemAmount.length;
+  };
+
   return (
     <div className="product-card-main">
       <h3>{props.title}</h3>
       {/* <h4>Rating: {props.rating}</h4> */}
       <ProductStarRating key={props.id} rating={props.rating} />
       <img className="product-card-image" src={props.image} alt={props.title} />
+      <h4>Total items: </h4>
       <h4>$ {props.price}</h4>{" "}
       <div className="product-card-button">
         {token ? (
