@@ -9,6 +9,7 @@ import { resetShopcart } from "../../store/shopcart/slice";
 import "./styles.css";
 import { useNavigate } from "react-router-dom";
 import { BsCheckCircle } from "react-icons/bs";
+
 function OrderPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();

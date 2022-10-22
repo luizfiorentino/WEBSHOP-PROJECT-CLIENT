@@ -3,11 +3,12 @@ a {
 }
 
 .product-details-main {
-  /* margin: 0.5rem; */
-  max-width: 50rem;
+  /* margin: -2px; */
+  /* max-width: 50rem; */
+  width: 100%;
 
   background-color: orange;
-  border: 0.7rem solid black;
+  border-top: 1px solid chartreuse;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,7 +33,7 @@ a {
 .product-details-call {
   color: purple;
 
-  padding: 0 3rem;
+  padding: 0.5rem 3rem;
   background-color: rgba(255, 255, 255, 0.1);
   font-family: "Cookie";
   font-size: 30px;
@@ -41,7 +42,7 @@ a {
 }
 
 .rate-product-call {
-  margin-top: 0;
+  margin-top: 5px;
 }
 
 .star-rating-call {
@@ -58,9 +59,11 @@ a {
   color: blue;
 
   margin-top: 1rem;
-  width: 81%;
+  width: 50%;
   border: 2px solid black;
   padding: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 .product-category {
@@ -72,7 +75,7 @@ a {
 .product-description {
   color: blue;
   margin-top: 1rem;
-  width: 81%;
+  width: 50%;
   border: 2px solid black;
   padding: 1rem;
   text-align: justify;
@@ -92,9 +95,13 @@ a {
   font-family: "Aref Ruqaa Ink";
 }
 
-/* .product-image {
+.product-image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   background-color: white;
-} */
+}
 .emphasis-description {
   font-family: "Aref Ruqaa Ink";
   font-size: 20px;
@@ -102,6 +109,7 @@ a {
 }
 
 .review-area {
+  width: 100%;
   margin: 0;
 }
 

@@ -1,0 +1,78 @@
+.product-review-main {
+  /* width: 100%; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-fields {
+  width: 50%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-field {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.form-outline {
+  width: 100%;
+}
+
+.inner-review {
+  width: 100%;
+  background-color: red;
+}
+
+.input-field {
+  height: 100px;
+  width: 80%;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.name-and-email-fields {
+  margin-right: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+
+@media (min-width: 70rem) {
+  .name-and-email-fields {
+    margin: 0;
+    width: 105%;
+    margin-left: -1rem;
+    flex-direction: row;
+  }
+}
+
+.input-field-name-and-email {
+  /* height: 100px; */
+  /* width: 28rem; */
+  width: 70%;
+  /* padding: 1rem; */
+  margin: 1rem 1rem 0;
+  display: flex;
+
+  text-align: left;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.input-inner {
+  width: 100%;
+}
+
+.submit-review-button {
+  margin-top: 1rem;
+}

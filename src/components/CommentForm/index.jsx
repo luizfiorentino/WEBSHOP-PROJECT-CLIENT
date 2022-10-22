@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectAllComments } from "../../store/comments/selectors";
 import { postComment } from "../../store/comments/thunks";
+import "./styles.css";
 
 function CommentForm(props) {
   const dispatch = useDispatch();
@@ -30,30 +31,48 @@ function CommentForm(props) {
   console.log("this prod:", thisProductComments);
 
   return (
-    <div>
+    <div className="product-review-main">
       <h4>Post your review!</h4>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Comment:{" "}
-          <input
-            type="text"
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
-          />
-        </label>{" "}
-        <label>
-          Name:{" "}
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </label>{" "}
-        <p>
-          {" "}
-          <button type="submit">Submit</button>{" "}
-        </p>
-      </form>
+      <div className="review-fields">
+        <form className="form-outline" onSubmit={handleSubmit}>
+          <label className="form-field">
+            Comment:{" "}
+            <textarea
+              className="input-field"
+              type="text"
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+            />
+          </label>{" "}
+          <div className="name-and-email-fields">
+            <label className="input-field-name-and-email">
+              Name:{" "}
+              <input
+                className="input-inner"
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </label>{" "}
+            <label className="input-field-name-and-email">
+              Email:{" "}
+              <input
+                className="input-inner"
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </label>{" "}
+          </div>
+          <p>
+            {" "}
+            <button className="submit-review-button" type="submit">
+              Submit
+            </button>{" "}
+          </p>
+        </form>
+      </div>
+
       {/* <ul>
         {thisProductComments.length === 0 ? (
           <p>No comments for this product yet</p>

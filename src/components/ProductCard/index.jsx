@@ -26,23 +26,29 @@ export default function ProductCard(props) {
   };
 
   return (
-    <div className="product-card-main">
-      <h3>{props.title}</h3>
-      {/* <h4>Rating: {props.rating}</h4> */}
-      <ProductStarRating key={props.id} rating={props.rating} />
-      <img className="product-card-image" src={props.image} alt={props.title} />
-      <h4>$ {props.price}</h4>{" "}
-      <div className="product-card-button">
-        {token ? (
-          <button className="product-card-button" onClick={addProduct}>
-            Add to shopcart
+    <Link to={`/products/${props.id}`}>
+      <div className="product-card-main">
+        <h3>{props.title}</h3>
+        {/* <h4>Rating: {props.rating}</h4> */}
+        <ProductStarRating key={props.id} rating={props.rating} />
+        <img
+          className="product-card-image"
+          src={props.image}
+          alt={props.title}
+        />
+        <h4>$ {props.price}</h4>{" "}
+        <div className="product-card-button">
+          {token ? (
+            <button className="product-card-button" onClick={addProduct}>
+              Add to shopcart
+            </button>
+          ) : null}
+          <button className="product-card-button">
+            {" "}
+            <Link to={`/products/${props.id}`}>More</Link>
           </button>
-        ) : null}
-        <button className="product-card-button">
-          {" "}
-          <Link to={`/products/${props.id}`}>More</Link>
-        </button>
-      </div>
-    </div>
+        </div>
+      </div>{" "}
+    </Link>
   );
 }

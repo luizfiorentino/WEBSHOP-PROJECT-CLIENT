@@ -130,7 +130,7 @@ function HomePage() {
     <div className="main-container">
       <div className="home-page-main">
         <div className="hero-banner">
-          <h1>Welcome to the OnlineShop Homepage!</h1>
+          <h1 className="welcome-call">Welcome to the OnlineShop Homepage!</h1>
         </div>
         {/* {categories.map((category) => {
         return (
@@ -141,7 +141,11 @@ function HomePage() {
         );
       })} */}
         <h3 className="category-call">:: Choose a category ::</h3>
-        <select value={category} onChange={(e) => setCategory(e.target.value)}>
+        <select
+          className="category-selector"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        >
           <option value="all">All products</option>
           {categories.map((category) => {
             return (
@@ -177,14 +181,15 @@ function HomePage() {
         </div>
       </div>
       <div className="footer">
-        {/* <div className="footer-left-side"></div>
-        <div className="footer-right-side"> */}
-        <p className="costumer-call">
-          We're happy to help or get any suggestion from you! Please send an
-          email to our costumer's center:{" "}
-          <span className="costumer-center-email">support@online-shop.com</span>{" "}
-        </p>
-        {/* </div> */}
+        <div className="footer-text">
+          <p className="costumer-call">
+            We're happy to help or get any suggestion from you! Please send an
+            email to our costumer's center:{" "}
+            <span className="costumer-center-email">
+              contact@online-shop.com
+            </span>{" "}
+          </p>
+        </div>
       </div>
     </div>
   );
