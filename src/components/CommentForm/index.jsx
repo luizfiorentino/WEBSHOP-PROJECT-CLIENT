@@ -6,10 +6,12 @@ import "./styles.css";
 
 function CommentForm(props) {
   const dispatch = useDispatch();
-
+  const comments = useSelector(selectAllComments);
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
-  const comments = useSelector(selectAllComments);
+  const [email, setEmail] = useState("");
+  const [buttonClicked, setButtonClicked] = useState(false);
+
   console.log("com form:", comments);
   const productId = props.id;
 
@@ -17,12 +19,16 @@ function CommentForm(props) {
     event.preventDefault();
 
     const userId = 1; //hardcoded for now
+    if (!comment || comment === "") {
+      setButtonClicked(true);
+    } else {
+      dispatch(postComment(productId, userId, comment));
 
-    dispatch(postComment(productId, userId, comment));
-    console.log("newComment from form::");
-
-    setName("");
-    setComment("");
+      setName("");
+      setComment("");
+      setEmail("");
+      setButtonClicked(false);
+    }
   }
 
   const thisProductComments = comments.filter(
@@ -36,7 +42,7 @@ function CommentForm(props) {
       <div className="review-fields">
         <form className="form-outline" onSubmit={handleSubmit}>
           <label className="form-field">
-            Comment:{" "}
+            Comment: *{" "}
             <textarea
               className="input-field"
               type="text"
@@ -44,6 +50,13 @@ function CommentForm(props) {
               onChange={(e) => setComment(e.target.value)}
             />
           </label>{" "}
+          <div>
+            {buttonClicked === true ? (
+              <p className="empty-comment-message">
+                Comment field must be filled
+              </p>
+            ) : undefined}{" "}
+          </div>
           <div className="name-and-email-fields">
             <label className="input-field-name-and-email">
               Name:{" "}
@@ -59,8 +72,8 @@ function CommentForm(props) {
               <input
                 className="input-inner"
                 type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </label>{" "}
           </div>
