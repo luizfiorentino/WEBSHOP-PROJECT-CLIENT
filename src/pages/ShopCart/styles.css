@@ -21,6 +21,7 @@ button {
 
 .shopcart-items-inner {
   /* border: 1px solid black; */
+  margin-left: -2rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -38,6 +39,7 @@ button {
 }
 
 .order-button {
+  margin-top: 15px;
   font-weight: bold;
   padding: 15px;
 }

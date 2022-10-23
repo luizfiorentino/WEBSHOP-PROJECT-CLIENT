@@ -146,16 +146,20 @@ function OrderPage() {
                 />
               </label>
             </div>
-            <p>
-              <strong>
-                {card === "" ? (
-                  <span className="no-card-selected-default">No card</span>
-                ) : (
-                  <BsCheckCircle />
-                )}
-              </strong>{" "}
-              <strong>{card} </strong>selected
-            </p>
+            <strong>
+              {card === "No card" ? (
+                <span className="no-card-selected-default">
+                  <p>No card selected</p>
+                </span>
+              ) : (
+                <strong>
+                  {" "}
+                  <p>
+                    <BsCheckCircle /> <strong>{card} </strong>selected
+                  </p>
+                </strong>
+              )}
+            </strong>{" "}
             <div className="payment-and-address-fields">
               <label className="delivery-fields">
                 Card Number *

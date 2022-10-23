@@ -10,7 +10,8 @@ function CommentForm(props) {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [email, setEmail] = useState("");
-  const [buttonClicked, setButtonClicked] = useState(false);
+  const [emptyComment, setEmptyComment] = useState(false);
+  const [thanksMessage, setThanksMessage] = useState(false);
 
   console.log("com form:", comments);
   const productId = props.id;
@@ -20,14 +21,15 @@ function CommentForm(props) {
 
     const userId = 1; //hardcoded for now
     if (!comment || comment === "") {
-      setButtonClicked(true);
+      setEmptyComment(true);
     } else {
       dispatch(postComment(productId, userId, comment));
 
       setName("");
       setComment("");
       setEmail("");
-      setButtonClicked(false);
+      setEmptyComment(false);
+      setThanksMessage(true);
     }
   }
 
@@ -39,10 +41,15 @@ function CommentForm(props) {
   return (
     <div className="product-review-main">
       <h4>Post your review!</h4>
+      {thanksMessage === true ? (
+        <p className="thanks-message">
+          Thanks for helping us improve our services!
+        </p>
+      ) : undefined}
       <div className="review-fields">
         <form className="form-outline" onSubmit={handleSubmit}>
           <label className="form-field">
-            Comment: *{" "}
+            *Comment:{" "}
             <textarea
               className="input-field"
               type="text"
@@ -51,7 +58,7 @@ function CommentForm(props) {
             />
           </label>{" "}
           <div>
-            {buttonClicked === true ? (
+            {emptyComment === true ? (
               <p className="empty-comment-message">
                 Comment field must be filled
               </p>

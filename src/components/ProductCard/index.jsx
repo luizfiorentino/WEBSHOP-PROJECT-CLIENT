@@ -13,6 +13,7 @@ export default function ProductCard(props) {
   const cartItems = useSelector(selectCartItems);
   const itemId = cartItems.length + 1;
   const token = useSelector(selectToken);
+
   const addProduct = () => {
     console.log("addProduct", props.id);
     const itemObject = {
@@ -40,7 +41,7 @@ export default function ProductCard(props) {
         <div className="product-card-button">
           {token ? (
             <button className="product-card-button" onClick={addProduct}>
-              Add to shopcart
+              <Link to="/">Add to shopcart</Link>
             </button>
           ) : null}
           <button className="product-card-button">

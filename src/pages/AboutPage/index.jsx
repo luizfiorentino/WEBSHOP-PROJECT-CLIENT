@@ -5,7 +5,7 @@ import "./styles.css";
 function AboutPage() {
   return (
     <div className="main-container">
-      <div className="home-page-main">
+      <div className="about-page-main">
         <div className="hero-banner">
           <h1>Meeting our Costumers Needs is our Mission.</h1>
         </div>
@@ -32,25 +32,27 @@ function AboutPage() {
           <span className="email-text">contact@online-shop.com</span>
           We'll be happy to hearing from you and improve our services!
         </p>
+
         <p className="main-text-inner">
           Check out some of the benefits of buying with the OnlineShop:
         </p>
-        <ul className="main-text-list">
-          <li>Top quality products in line with the newest trends</li>
-          <li>Fast online support from a team of careful specialists</li>
-          <li>Safe transactions</li>
-          <li>Product quality garantee</li>
+        <ul className="benefit-topics">
+          <li className="benefit-list-items">
+            Top quality products in line with the newest trends
+          </li>
+          <li className="benefit-list-items">
+            Fast online support from a team of careful specialists
+          </li>
+          <li className="benefit-list-items"> Safe transactions</li>
+          <li className="benefit-list-items">Product quality garantee</li>
         </ul>
       </div>
-      <div className="footer">
-        {/* <div className="footer-left-side"></div>
-        <div className="footer-right-side"> */}
+      <div className="about-page-footer">
         <p className="costumer-call">
           We're happy to help or get any suggestion from you! Please send an
           email to our costumer's center:{" "}
           <span className="costumer-center-email">support@online-shop.com</span>{" "}
         </p>
-        {/* </div> */}
       </div>
     </div>
   );

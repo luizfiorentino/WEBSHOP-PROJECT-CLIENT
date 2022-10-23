@@ -47,6 +47,12 @@
   margin-top: 1rem;
 }
 
+.thanks-message {
+  margin-bottom: 5px;
+  font-size: 14;
+  font-weight: bold;
+}
+
 .name-and-email-fields {
   margin-right: 0.7rem;
   display: flex;

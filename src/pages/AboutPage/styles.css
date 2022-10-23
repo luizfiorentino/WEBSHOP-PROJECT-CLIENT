@@ -1,5 +1,13 @@
-.home-page-main {
+.benefit-list-items {
+  margin-left: 5rem;
+  margin-bottom: 0.3rem;
+}
+
+.about-page-main {
   /* background-image: url(https://media.macphun.com/img/uploads/customer/blog/504/15360610675b8e6e8b52bd36.49629027.jpg?q=85&w=1680); */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   background-image: url(https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/many-colorful-jellyfish-on-the-dark-sea-royalty-free-image-1572034000.jpg);
   background-repeat: no-repeat;
@@ -9,7 +17,7 @@
 }
 
 .hero-banner {
-  height: 150px;
+  height: 200px;
   background-color: #0c0c8a;
   font-family: "Aref Ruqaa Ink";
 
@@ -19,11 +27,13 @@
 }
 
 .main-text {
-  /* margin-bottom: 2rem; */
   /* background-image: url(https://i.etsystatic.com/24213509/r/il/e15113/2720054794/il_570xN.2720054794_5tzz.jpg); */
   /* background-image: url(https://www.aptouring.com/-/media/apt-responsive-website/north-america/hero-panel-12-5/alaska-12-5/hc-a-causa-alaska-northern-lights-599096567-s-12-5.webp?useCustomFunctions=1&rw=1299&w=1299&h=541&cropX=0&cropY=0&format=webp); */
+
   margin-top: -2rem;
+
   padding: 0.5rem;
+
   background-image: url(https://png.pngtree.com/element_our/20190530/ourlarge/pngtree-a-group-of-flying-birds-image_1257449.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -36,13 +46,14 @@
 }
 
 .main-text-inner {
+  width: 100%;
   margin: 0;
-  padding: 1rem;
-  width: 40rem;
+  padding: 0.5rem 1rem;
+  max-width: 40rem;
   font-family: "Cookie";
   font-size: 28px;
   color: blue;
-  background: rgba(255, 255, 82559, 0.7);
+  background: rgba(255, 255, 255, 0.7);
   text-align: left;
   display: flex;
   justify-content: center;
@@ -50,27 +61,51 @@
   align-items: left;
 }
 
-.main-text-list {
-  margin: 0 0 1rem;
-  width: 37rem;
-  padding-bottom: 0.5rem;
-  padding-left: 5rem;
+.benefit-topics {
+  width: 100%;
+  margin: 0;
+  padding-bottom: 1rem;
+  max-width: 39.5rem;
   font-family: "Cookie";
   font-size: 28px;
   color: blue;
-  background: rgba(255, 255, 82559, 0.7);
+  background: rgba(255, 255, 255, 0.7);
   text-align: left;
   display: flex;
-  justify-content: center;
+
   flex-direction: column;
+  align-items: left;
+}
+
+.main-text-list {
+  margin: 0 0 1rem;
+
+  width: 100%;
+  padding-bottom: 0.5rem;
+
+  font-family: "Cookie";
+  font-size: 28px;
+  color: blue;
+  background: rgba(255, 255, 255, 0.7);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   align-content: left;
 }
+
 .mission-call {
-  padding: 1rem;
+  width: 100%;
+
+  margin-left: 0;
+  margin-bottom: 2rem;
+  padding: 0.5rem 0;
   background-color: rgba(231, 89, 89, 0.6);
-  /* color: #ff00ff; */
+
   color: chartreuse;
   font-size: 24px;
+  justify-content: center;
 }
 
 .email-text {
@@ -79,8 +114,15 @@
   text-align: center;
 }
 
-.footer {
-  height: 150px;
+.benefit-list {
+  width: 55%;
+  background-color: rgba (255, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-items: left;
+}
+.about-page-footer {
+  height: 200px;
   background-color: #0c0c8a;
   color: white;
   display: flex;
@@ -110,5 +152,6 @@
 }
 
 .costumer-call {
+  width: 60%;
   font-family: "Aref Ruqaa Ink";
 }

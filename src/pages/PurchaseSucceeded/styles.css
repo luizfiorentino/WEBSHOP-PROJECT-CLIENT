@@ -1,0 +1,33 @@
+.confirmation-main {
+  display: flex;
+  flex-direction: column;
+}
+.thanks-message {
+  color: blueviolet;
+  font-family: "Cookie";
+  font-size: 28px;
+  margin-top: 3rem;
+}
+
+.confirmation-message {
+  color: black;
+  width: 30rem;
+  font-size: 18px;
+  margin-top: 1rem;
+}
+
+.cheers-icon {
+  color: olive;
+}
+.back-hp-button {
+  margin: 2rem;
+}
+
+.hp-link {
+  padding: 2rem;
+}
+.purchase-succeeded {
+  font-size: 14px;
+  color: black;
+  margin: 1rem;
+}
