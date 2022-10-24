@@ -133,7 +133,7 @@
   flex-wrap: wrap;
 }
 @media (min-width: 77rem) {
-  .footer {
+  .about-page-footer {
     flex-direction: row;
   }
 }
@@ -151,7 +151,13 @@
   }
 }
 
-.costumer-call {
+.costumer-call-about-page {
   width: 60%;
+  color: white;
+  font-size: 14px;
   font-family: "Aref Ruqaa Ink";
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

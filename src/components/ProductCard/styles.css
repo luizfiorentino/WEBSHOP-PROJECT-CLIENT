@@ -1,5 +1,6 @@
 .product-card-main {
   max-width: 15rem;
+  height: 30rem;
   margin: 1rem;
 
   padding: 2rem;
@@ -10,7 +11,11 @@
 
   display: flex;
   flex-direction: column;
-  align-content: center;
+  justify-content: flex-start;
+}
+
+.pc-link {
+  color: blue;
 }
 
 .product-card-image {

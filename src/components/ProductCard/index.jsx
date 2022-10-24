@@ -27,8 +27,8 @@ export default function ProductCard(props) {
   };
 
   return (
-    <Link to={`/products/${props.id}`}>
-      <div className="product-card-main">
+    <div className="product-card-main">
+      <Link className="pc-link" to={`/products/${props.id}`}>
         <h3>{props.title}</h3>
         {/* <h4>Rating: {props.rating}</h4> */}
         <ProductStarRating key={props.id} rating={props.rating} />
@@ -49,7 +49,7 @@ export default function ProductCard(props) {
             <Link to={`/products/${props.id}`}>More</Link>
           </button>
         </div>
-      </div>{" "}
-    </Link>
+      </Link>
+    </div>
   );
 }

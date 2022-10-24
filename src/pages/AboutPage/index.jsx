@@ -48,7 +48,7 @@ function AboutPage() {
         </ul>
       </div>
       <div className="about-page-footer">
-        <p className="costumer-call">
+        <p className="costumer-call-about-page">
           We're happy to help or get any suggestion from you! Please send an
           email to our costumer's center:{" "}
           <span className="costumer-center-email">support@online-shop.com</span>{" "}

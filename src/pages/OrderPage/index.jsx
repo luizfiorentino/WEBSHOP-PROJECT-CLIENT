@@ -82,16 +82,19 @@ function OrderPage() {
   // };
   //console.log(":::card->", card);
   return (
-    <div>
+    <div className="orders-main-container">
       <h3>Order's summary:</h3>
       <h4>Number of items: {cartItems.length}</h4>
-      <ul>
-        {cartItems ? (
-          cartItems.map((item) => <li key={item.id}>{item.title}</li>)
-        ) : (
-          <p>Loading..</p>
-        )}
-      </ul>
+      <div className="order-items-outline">
+        <ul className="order-items">
+          {cartItems ? (
+            cartItems.map((item) => <li key={item.id}>{item.title}</li>)
+          ) : (
+            <p>Loading..</p>
+          )}
+        </ul>
+      </div>
+
       <h4>Total: $ {totalAmount}</h4>
       <div className="main-form">
         {" "}
