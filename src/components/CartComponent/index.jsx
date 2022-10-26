@@ -18,7 +18,9 @@ function CartComponent(props) {
       <div className="product-inner">
         <p className="title">{props.title}</p>
         <img className="img-thumbnail" src={props.image} />
-        <p className="total-items">Total items: {itemAmount}</p>
+        <p className="total-items">
+          Items: <strong>{itemAmount}</strong>
+        </p>
         <p>$ {parseFloat(props.price.toFixed(2))}</p>
         <button onClick={() => dispatch(removeItem(props.id))}>
           Remove item

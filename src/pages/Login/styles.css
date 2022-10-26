@@ -1,6 +1,6 @@
 .login-page-main-container {
   margin: 2rem;
-  width: 40rem;
+  width: 60%;
   border: 1px solid black;
   display: flex;
   flex-direction: column;
@@ -28,4 +28,8 @@
 .login-error-message {
   color: red;
   font-style: italic;
+}
+
+.login-button {
+  margin-bottom: 1rem;
 }

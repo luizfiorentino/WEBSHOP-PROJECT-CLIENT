@@ -1,8 +1,56 @@
 .shopcart-page-main-container {
+  width: 104%;
+  margin-left: -2rem;
   display: flex;
   flex-direction: column;
+
+  flex-wrap: wrap;
+  /* display: flex;
+  flex-direction: column; */
+  /* flex-wrap: wrap; */
+
+  /* align-items: center; */
+}
+
+/* @media (min-width: 57rem) {
+  .shopcart-page-main-container {
+    flex-direction: row;
+  }
+} */
+
+.shopcart-items-inner {
+  /* background-color: red; */
+  width: 100%;
+  margin-left: -1rem;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+.main-inner {
+  margin-bottom: 0rem;
+}
+
+.price-and-button {
+  margin-top: 0;
+}
+
+/* .thumbnail-cards {
+  background-color: green;
+
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+} */
+
+.thumbnails-inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 p {
@@ -16,20 +64,19 @@ p {
 
 button {
   margin: 5px;
-  font-size: 12px;
+
+  font-size: 14px;
 }
 
-.shopcart-items-inner {
-  /* border: 1px solid black; */
-  margin-left: -2rem;
+.product-cards-list {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
+  /* flex-wrap: wrap; */
 }
 
 .purchase-summary {
   margin: 10px;
+  margin-left: 3rem;
   color: black;
   font-size: 18px;
 }
@@ -40,6 +87,44 @@ button {
 
 .order-button {
   margin-top: 15px;
+  margin-bottom: 2rem;
+  margin-left: 2.5rem;
   font-weight: bold;
   padding: 15px;
+}
+
+.footer-sp {
+  width: 100%;
+  height: 200px;
+  /* margin-top: 2rem; */
+  margin-bottom: 0;
+  border-top: 1px solid chartreuse;
+  border-bottom: 1px solid chartreuse;
+
+  background-color: #0c0c8a;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer-text {
+  width: 60%;
+  padding: 10px;
+}
+
+.footer-right-side {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.costumer-call {
+  color: white;
+  font-size: 16px;
+  font-family: "Aref Ruqaa Ink";
 }

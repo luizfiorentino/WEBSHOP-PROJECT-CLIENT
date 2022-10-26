@@ -17,6 +17,7 @@
   height: 150px;
   background-color: #0c0c8a;
   font-family: "Aref Ruqaa Ink";
+  border-bottom: 1px solid chartreuse;
 
   display: flex;
   justify-content: center;
@@ -40,9 +41,11 @@
   margin-top: 1rem;
 }
 
-.footer {
+.footer-hp {
   width: 100%;
-  height: 150px;
+  height: 200px;
+  border-top: 1px solid chartreuse;
+  border-bottom: 1px solid chartreuse;
 
   background-color: #0c0c8a;
   color: white;
@@ -53,13 +56,9 @@
   flex-direction: column;
   flex-wrap: wrap;
 }
-/* @media (min-width: 77rem) {
-  .footer {
-    flex-direction: row;
-  }
-} */
 
 .footer-text {
+  width: 60%;
   padding: 10px;
 }
 

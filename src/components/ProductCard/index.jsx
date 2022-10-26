@@ -40,11 +40,11 @@ export default function ProductCard(props) {
         <h4>$ {props.price}</h4>{" "}
         <div className="product-card-button">
           {token ? (
-            <button className="product-card-button" onClick={addProduct}>
+            <button onClick={addProduct}>
               <Link to="/">Add to shopcart</Link>
             </button>
           ) : null}
-          <button className="product-card-button">
+          <button>
             {" "}
             <Link to={`/products/${props.id}`}>More</Link>
           </button>

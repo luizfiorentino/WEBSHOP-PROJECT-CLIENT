@@ -56,22 +56,22 @@ function Login() {
           </label>
         </div>
 
-        <p>
+        <p className="login-button">
           <button type="submit">Submit</button>
         </p>
       </form>
       {buttonClicked === true ? (
         <p className="login-error-message">
-          Email and password must be entered
+          <strong>Email and password must be entered</strong>
         </p>
       ) : undefined}
       {!token && invalidCredentials === true ? (
         <p className="login-error-message">
-          Email and/or password don't match. Please try again.
+          <strong>Email and/or password don't match. Please try again.</strong>
         </p>
       ) : undefined}
-      <h4>Don't have and account yet?</h4>
-      <p>
+      <h4>Don't have an account yet?</h4>
+      <p className="login-button">
         <Link to="/signin">
           <button>Click here to sign in</button>
         </Link>

@@ -88,7 +88,11 @@ function OrderPage() {
       <div className="order-items-outline">
         <ul className="order-items">
           {cartItems ? (
-            cartItems.map((item) => <li key={item.id}>{item.title}</li>)
+            cartItems.map((item) => (
+              <li className="li-order-items" key={item.id}>
+                {item.title}
+              </li>
+            ))
           ) : (
             <p>Loading..</p>
           )}
@@ -101,7 +105,7 @@ function OrderPage() {
         <div className="order-form">
           <form onSubmit={handleSubmit}>
             {" "}
-            <p>Select a card:</p>
+            <p className="select-card-call">* Select a card:</p>
             <div className="card-selection">
               <label className="card-item">
                 <input
@@ -157,7 +161,7 @@ function OrderPage() {
               ) : (
                 <strong>
                   {" "}
-                  <p>
+                  <p className="select-card-call">
                     <BsCheckCircle /> <strong>{card} </strong>selected
                   </p>
                 </strong>
@@ -245,6 +249,17 @@ function OrderPage() {
               </p>
             </div>
           </form>
+        </div>
+      </div>
+      <div className="footer-sp">
+        <div className="footer-text">
+          <p className="costumer-call">
+            We're happy to help or get any suggestion from you! Please send an
+            email to our costumer's center:{" "}
+            <span className="costumer-center-email">
+              contact@online-shop.com
+            </span>{" "}
+          </p>
         </div>
       </div>
     </div>

@@ -124,6 +124,9 @@
 .about-page-footer {
   height: 200px;
   background-color: #0c0c8a;
+  border-top: 1px solid chartreuse;
+  border-bottom: 1px solid chartreuse;
+
   color: white;
   display: flex;
   justify-content: space-around;
@@ -140,6 +143,7 @@
 
 .footer-right-side {
   color: white;
+
   display: flex;
   justify-content: center;
   align-items: center;

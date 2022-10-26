@@ -1,0 +1,66 @@
+.main-signin-container {
+  margin-top: 2rem;
+  border: 1px solid black;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: red; */
+}
+
+.signin-form {
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+}
+
+.signin-title {
+  display: flex;
+  justify-content: center;
+}
+.signin-icon {
+  color: chartreuse;
+}
+
+.signin-input {
+  margin-right: 1rem;
+  width: 60%;
+}
+.signin-field-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 61rem) {
+  .signin-field-inner {
+    margin-left: 1rem;
+    flex-direction: row;
+  }
+}
+
+.mandatory-fields-message {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: center;
+  color: blue;
+  font-style: italic;
+}
+
+.signin-submit-button {
+  margin: 1rem 0;
+}
+
+.bad-request-message {
+  margin-top: 1rem;
+  color: red;
+}
+
+.created-account-message {
+}
+
+.goto-hp-link {
+  margin-bottom: 1rem;
+  color: blue;
+}

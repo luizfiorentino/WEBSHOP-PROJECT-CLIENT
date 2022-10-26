@@ -6,6 +6,7 @@ a {
   width: 100%;
   background-color: olive;
   font-family: "Aref Ruqaa Ink";
+  border-bottom: 1px solid chartreuse;
 
   display: flex;
   flex-direction: column;

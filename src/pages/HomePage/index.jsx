@@ -180,7 +180,7 @@ function HomePage() {
           </ul>
         </div>
       </div>
-      <div className="footer">
+      <div className="footer-hp">
         <div className="footer-text">
           <p className="costumer-call">
             We're happy to help or get any suggestion from you! Please send an

@@ -1,4 +1,5 @@
 .orders-main-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -54,9 +55,13 @@ input {
   align-items: center;
 } */
 
+.select-card-call {
+  font-size: 14px;
+}
 .payment-and-address-fields {
   width: 40rem;
   margin: 2rem;
+  margin-bottom: 3rem;
   padding: 2rem;
   border: 1px solid black;
 
@@ -107,4 +112,8 @@ input {
   color: blue;
   font-style: italic;
   font-size: 14px;
+}
+
+.footer-sp {
+  width: 100%;
 }

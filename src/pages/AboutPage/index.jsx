@@ -7,7 +7,7 @@ function AboutPage() {
     <div className="main-container">
       <div className="about-page-main">
         <div className="hero-banner">
-          <h1>Meeting our Costumers Needs is our Mission.</h1>
+          <h1>Meeting our Custumers Needs is our Dearest Goal.</h1>
         </div>
 
         <h3 className="mission-call">About Us</h3>
@@ -44,7 +44,7 @@ function AboutPage() {
             Fast online support from a team of careful specialists
           </li>
           <li className="benefit-list-items"> Safe transactions</li>
-          <li className="benefit-list-items">Product quality garantee</li>
+          <li className="benefit-list-items">Product quality guarantee</li>
         </ul>
       </div>
       <div className="about-page-footer">

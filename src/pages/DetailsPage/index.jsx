@@ -134,15 +134,16 @@ function DetailsPage() {
           <Link to={"/"}>Home Page</Link>
         </button>
       </div>
-      <div className="footer">
-        {/* <div className="footer-left-side"></div>
-        <div className="footer-right-side"> */}
-        <p className="costumer-call">
-          We're happy to help or get any suggestion from you! Please send an
-          email to our costumer's center:{" "}
-          <span className="costumer-center-email">support@online-shop.com</span>{" "}
-        </p>
-        {/* </div> */}
+      <div className="footer-hp">
+        <div className="footer-text">
+          <p className="costumer-call">
+            We're happy to help or get any suggestion from you! Please send an
+            email to our costumer's center:{" "}
+            <span className="costumer-center-email">
+              contact@online-shop.com
+            </span>{" "}
+          </p>
+        </div>
       </div>
     </div>
   );
